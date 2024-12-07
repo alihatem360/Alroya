@@ -10,7 +10,7 @@
   width: 100%;
   height: 110px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .wm-card-divider {
@@ -49,7 +49,7 @@
 
 .wm-price {
   align-self: stretch;
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -69,8 +69,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: #663190;
-  border: #663190;
+  background: #0c6bcd;
+  border: #0c6bcd;
 }
 
 .circle-success {
@@ -80,7 +80,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: var(--Primary-colors-Purple-Light02, #EBDFF4);
+  background: var(--Primary-colors-Purple-Light02, #ebdff4);
   border: none;
 }
 
@@ -93,4 +93,4 @@
   border: #ebdff4;
   justify-content: center;
   align-items: center;
-}/*# sourceMappingURL=kitchen-program-card.component.css.map */
+} /*# sourceMappingURL=kitchen-program-card.component.css.map */

@@ -16,7 +16,7 @@
 }
 
 .nav-link.active {
-  color: #663190 !important;
+  color: #0c6bcd !important;
 }
 
 .nav-link.active::after {
@@ -24,18 +24,18 @@
   display: block;
   width: 100%;
   height: 2px;
-  border-bottom: 2px solid #663190;
+  border-bottom: 2px solid #0c6bcd;
 }
 
 svg.active path {
-  fill: #663190 !important;
+  fill: #0c6bcd !important;
 }
 
 .demo-section.active::after {
   content: "";
   display: block;
   width: 80%;
-  border: 1px solid #663190;
+  border: 1px solid #0c6bcd;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -115,7 +115,7 @@ svg.active path {
 }
 
 .search-container.active .search-icon path {
-  fill: #663190;
+  fill: #0c6bcd;
 }
 
 .search-container input[type="text"]::-webkit-input-placeholder {
@@ -161,7 +161,7 @@ svg.active path {
 }
 
 .nav-link:hover {
-  color: #663190;
+  color: #0c6bcd;
 }
 
 .demo-section {

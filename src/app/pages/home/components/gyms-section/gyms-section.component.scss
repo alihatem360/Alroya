@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -126,7 +126,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -161,7 +161,7 @@
   margin-inline-end: 0;
 }
 .active {
-  background-color: #663190;
+  background-color: #0c6bcd;
   color: white;
   transition: 0.5s ease;
 }
@@ -211,7 +211,7 @@
   }
   .gym-navigation,
   .coach-navigation {
-    color: var(--Primary-colors-Primary-01, #663190);
+    color: var(--Primary-colors-Primary-01, #0c6bcd);
     font-family: Cairo;
     font-size: 10px;
     font-style: normal;

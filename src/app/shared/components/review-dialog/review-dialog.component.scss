@@ -4,7 +4,7 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    color: #663190;
+    color: #0c6bcd;
   
     .dialog-header {
       display: flex;
@@ -41,7 +41,7 @@
           }
   
           &.filled {
-            color: #663190;
+            color: #0c6bcd;
           }
         }
   
@@ -66,7 +66,7 @@
         transition: border-color 0.3s ease;
   
         &:focus {
-          border-color: #663190;
+          border-color: #0c6bcd;
           box-shadow: 0 0 5px rgba(102, 49, 144, 0.5);
           outline: none;
         }
@@ -86,7 +86,7 @@
       }
   
       .submit-btn {
-        background-color: #663190;
+        background-color: #0c6bcd;
         color: white;
       }
   

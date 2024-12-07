@@ -49,7 +49,7 @@
   z-index: 1;
 }
 .tiltle-landing {
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-size: 40px;
   font-style: normal;
   font-weight: 900;
@@ -177,7 +177,7 @@
 
 @media (max-width: 769px) {
   .tiltle-landing {
-    color: var(--Primary-colors-Primary-01, #663190);
+    color: var(--Primary-colors-Primary-01, #0c6bcd);
     text-align: center;
     font-size: 13px;
     font-weight: 900;
@@ -224,7 +224,7 @@
   .search-text-input {
     font-weight: 600;
     font-size: 9px !important;
-    color: #663190;
+    color: #0c6bcd;
   }
 
   .divider-location {
@@ -243,7 +243,7 @@
   }
 
   .btn-search-location {
-    background-color: #663190;
+    background-color: #0c6bcd;
     color: white;
     border-radius: 50px;
     border: none;

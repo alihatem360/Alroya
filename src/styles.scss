@@ -31,7 +31,7 @@ body {
 //end::navigation-buttons
 
 /* SCSS Variables */
-$primary-color-base: #663190;
+$primary-color-base: #0c6bcd;
 $primary-color-dark: #43205f;
 $primary-color-light: #9b60c9;
 $primary-color-light1: #b68bd7;
@@ -379,7 +379,7 @@ ngx-intl-tel-input {
 }
 
 .custom-dialog-backdrop {
-  background-color: var(--Primary-colors-Primary-01, #663190);
+  background-color: var(--Primary-colors-Primary-01, #0c6bcd);
   opacity: 0.4 !important;
 }
 
@@ -618,9 +618,9 @@ html[dir="ltr"] .icon-container {
 }
 .selected-payment {
   border-radius: 4px;
-  border: 1px solid var(--Primary-colors-Primary-01, #663190) !important;
+  border: 1px solid var(--Primary-colors-Primary-01, #0c6bcd) !important;
   background: var(--Primary-colors-Purple-Light02, #ebdff4) !important;
-  color: var(--Primary-colors-Primary-01, #663190) !important;
+  color: var(--Primary-colors-Primary-01, #0c6bcd) !important;
 }
 .paymentInput {
   -webkit-appearance: none;
@@ -629,14 +629,14 @@ html[dir="ltr"] .icon-container {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid var(--Primary-colors-Primary-01, #663190) !important;
+  border: 2px solid var(--Primary-colors-Primary-01, #0c6bcd) !important;
   position: relative;
   cursor: pointer;
 }
 
 .paymentInput:checked {
-  background-color: var(--Primary-colors-Primary-01, #663190);
-  border-color: var(--Primary-colors-Primary-01, #663190) !important;
+  background-color: var(--Primary-colors-Primary-01, #0c6bcd);
+  border-color: var(--Primary-colors-Primary-01, #0c6bcd) !important;
 }
 
 .paymentInput:checked::after {
@@ -649,7 +649,7 @@ html[dir="ltr"] .icon-container {
   transform: translate(-50%, -50%);
 }
 .selected-text {
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
 }
 
 //End Swiper
@@ -662,7 +662,7 @@ html[dir="ltr"] .icon-container {
 }
 .card-dash:hover {
   border-radius: 8px;
-  border: 1px solid var(--Primary-colors-Primary-01, #663190);
+  border: 1px solid var(--Primary-colors-Primary-01, #0c6bcd);
 }
 
 .form-control:focus {

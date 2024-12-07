@@ -31,7 +31,7 @@ body {
 /* SCSS Variables */
 /* Primary Button */
 .WMbtn-primary {
-  background-color: #663190;
+  background-color: #0c6bcd;
   color: #ffffff;
   border-radius: 5px;
   font-size: 16px;
@@ -39,8 +39,8 @@ body {
 }
 
 .WMbtn-primary:hover {
-  background-color: #ebdff4;
-  color: #663190;
+  background-color: #7b9be7;
+  color: #0c6bcd;
 }
 
 .WMbtn-primary:active {
@@ -50,16 +50,16 @@ body {
 
 .WMbtn-Secondary01 {
   background-color: #ebdff4;
-  color: #663190;
+  color: #0c6bcd;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
 }
 
 .WMbtn-Secondary01:hover {
-  border: 1px solid #663190;
+  border: 1px solid #0c6bcd;
   background-color: #ebdff4;
-  color: #663190;
+  color: #0c6bcd;
 }
 
 .WMbtn-Secondary01:active {
@@ -69,9 +69,9 @@ body {
 
 .WMbtn-Secondary02 {
   background-color: transparent;
-  color: #663190;
+  color: #0c6bcd;
   border-radius: 5px;
-  border: 1px solid #663190;
+  border: 1px solid #0c6bcd;
   padding: 16px 24px;
   border-radius: 5px;
   font-size: 16px;
@@ -100,13 +100,13 @@ body {
 .WMbtn-Secondary02:hover {
   border: 0px;
   background-color: #ebdff4;
-  color: #663190;
+  color: #0c6bcd;
 }
 
 .WMbtn-Secondary02:active {
-  border: 1px solid #663190;
+  border: 1px solid #0c6bcd;
   background-color: #ebdff4;
-  color: #663190;
+  color: #0c6bcd;
 }
 
 [dir="rtl"] .swiper-custom-button {
@@ -338,7 +338,7 @@ ngx-intl-tel-input {
   }
 }
 .custom-dialog-backdrop {
-  background-color: var(--Primary-colors-Primary-01, #663190);
+  background-color: var(--Primary-colors-Primary-01, #0c6bcd);
   opacity: 0.4 !important;
 }
 
@@ -569,9 +569,9 @@ html[dir="ltr"] .icon-container {
 
 .selected-payment {
   border-radius: 4px;
-  border: 1px solid var(--Primary-colors-Primary-01, #663190) !important;
+  border: 1px solid var(--Primary-colors-Primary-01, #0c6bcd) !important;
   background: var(--Primary-colors-Purple-Light02, #ebdff4);
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
 }
 
 .paymentInput {
@@ -581,14 +581,14 @@ html[dir="ltr"] .icon-container {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid var(--Primary-colors-Primary-01, #663190) !important;
+  border: 2px solid var(--Primary-colors-Primary-01, #0c6bcd) !important;
   position: relative;
   cursor: pointer;
 }
 
 .paymentInput:checked {
-  background-color: var(--Primary-colors-Primary-01, #663190);
-  border-color: var(--Primary-colors-Primary-01, #663190) !important;
+  background-color: var(--Primary-colors-Primary-01, #0c6bcd);
+  border-color: var(--Primary-colors-Primary-01, #0c6bcd) !important;
 }
 
 .paymentInput:checked::after {
@@ -602,7 +602,7 @@ html[dir="ltr"] .icon-container {
 }
 
 .selected-text {
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
 }
 
 .card-dash {
@@ -613,7 +613,7 @@ html[dir="ltr"] .icon-container {
 
 .card-dash:hover {
   border-radius: 8px;
-  border: 1px solid var(--Primary-colors-Primary-01, #663190);
+  border: 1px solid var(--Primary-colors-Primary-01, #0c6bcd);
 }
 
 .form-control:focus {

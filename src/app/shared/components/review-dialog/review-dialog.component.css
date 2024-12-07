@@ -4,7 +4,7 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  color: #663190;
+  color: #0c6bcd;
 }
 .review-dialog .dialog-header {
   display: flex;
@@ -36,7 +36,7 @@
   transform: scale(1.2);
 }
 .review-dialog .dialog-body .star-rating span.filled {
-  color: #663190;
+  color: #0c6bcd;
 }
 .review-dialog .dialog-body .star-rating span:hover ~ span {
   color: #ccc !important;
@@ -56,7 +56,7 @@
   transition: border-color 0.3s ease;
 }
 .review-dialog .dialog-body textarea:focus {
-  border-color: #663190;
+  border-color: #0c6bcd;
   box-shadow: 0 0 5px rgba(102, 49, 144, 0.5);
   outline: none;
 }
@@ -65,17 +65,18 @@
   justify-content: space-between;
   margin-top: 20px;
 }
-.review-dialog .dialog-footer .submit-btn, .review-dialog .dialog-footer .cancel-btn {
+.review-dialog .dialog-footer .submit-btn,
+.review-dialog .dialog-footer .cancel-btn {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
 }
 .review-dialog .dialog-footer .submit-btn {
-  background-color: #663190;
+  background-color: #0c6bcd;
   color: white;
 }
 .review-dialog .dialog-footer .cancel-btn {
   background-color: #f0f0f0;
   color: #333;
-}/*# sourceMappingURL=review-dialog.component.css.map */
+} /*# sourceMappingURL=review-dialog.component.css.map */

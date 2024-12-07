@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(272.64deg, #663190 0.26%, #271436 94.08%);
+  background: linear-gradient(272.64deg, #0c6bcd 0.26%, #271436 94.08%);
   padding-top: 72px;
   padding-right: 12px;
   padding-left: 12px;
@@ -80,4 +80,4 @@
 }
 a {
   display: block;
-}/*# sourceMappingURL=footer.component.css.map */
+} /*# sourceMappingURL=footer.component.css.map */

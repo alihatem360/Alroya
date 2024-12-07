@@ -71,7 +71,7 @@
 }
 
 .vector {
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-family: "Font Awesome 6 Pro";
   font-size: 45px;
   font-style: normal;
@@ -84,4 +84,4 @@
   .service-card {
     padding: 14.5px 21px 13.5px 21px !important;
   }
-}/*# sourceMappingURL=consultants.component.css.map */
+} /*# sourceMappingURL=consultants.component.css.map */

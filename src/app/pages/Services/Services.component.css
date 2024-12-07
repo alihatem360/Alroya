@@ -86,7 +86,7 @@
 }
 
 .vector {
-  color: var(--Primary-colors-Primary-01, #663190);
+  color: var(--Primary-colors-Primary-01, #0c6bcd);
   font-family: "Font Awesome 6 Pro";
   font-size: 45px;
   font-style: normal;
@@ -150,4 +150,4 @@
     margin: 0px !important;
     margin-bottom: 4px !important;
   }
-}/*# sourceMappingURL=services.component.css.map */
+} /*# sourceMappingURL=services.component.css.map */
