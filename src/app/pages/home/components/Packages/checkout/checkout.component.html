@@ -1,0 +1,619 @@
+<div class="bg-landing">
+  <div class="container">
+    <div class="breadcrumbs-section">
+      <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    </div>
+    <div>
+      @if(isLoading){
+      <app-loading></app-loading>
+      }@else{
+      <div class="section-heeder-title">{{ "Checkout" | translate }}</div>
+      <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <div class="info-card">
+              <div class="card-title">
+                {{ "Delivery Information" | translate }}
+              </div>
+              <div class="row g-3">
+                <div class="col-8 col-md-8 section-info">
+                  <select
+                    id="client"
+                    class="input-field me-3 w-100"
+                    formControlName="clientId"
+                  >
+                    <option
+                      *ngFor="let client of clientList"
+                      [ngValue]="client.id"
+                    >
+                      {{ client.firstName }} {{ client.lastName }}
+                    </option>
+                  </select>
+                  <div
+                    *ngIf="
+                      appointmentForm.get('clientId')?.invalid &&
+                      appointmentForm.get('clientId')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "User is required" | translate }}
+                  </div>
+                </div>
+                <div class="col-4 col-md-4 section-info">
+                  <a
+                    (click)="addProfile()"
+                    class="btn WMbtn-Secondary01 input-button text-decoration-none w-100"
+                    >{{ "Add user" | translate }}
+                    <svg
+                      width="13"
+                      class="mx-1"
+                      height="14"
+                      viewBox="0 0 13 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 1.5L7.5 6L12 6C12.5312 6 13 6.46875 13 7C13 7.5625 12.5312 8 12 8H7.5L7.5 12.5C7.5 13.0625 7.03125 13.5 6.5 13.5C5.9375 13.5 5.5 13.0625 5.5 12.5L5.5 8L1 8C0.4375 8 -6.59346e-08 7.5625 -6.16032e-08 7C-5.75123e-08 6.46875 0.4375 6 1 6L5.5 6L5.5 1.5C5.5 0.96875 5.9375 0.5 6.5 0.5C7.03125 0.5 7.5 0.96875 7.5 1.5Z"
+                        fill="#663190"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-8 col-md-8 section-info">
+                  <select
+                    id="location"
+                    class="input-field me-3 w-100"
+                    formControlName="addressId"
+                  >
+                    <option
+                      *ngFor="let Address of addresses"
+                      [ngValue]="Address.id"
+                    >
+                      {{ Address.name }}
+                    </option>
+                  </select>
+                  <div
+                    *ngIf="
+                      appointmentForm.get('addressId')?.invalid &&
+                      appointmentForm.get('addressId')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "Location is required" | translate }}
+                  </div>
+                </div>
+                <div class="col-4 col-md-4 section-info">
+                  <a
+                    (click)="addAddress()"
+                    class="btn WMbtn-Secondary01 input-button text-decoration-none px-3 w-100"
+                    >{{ "Location" | translate }}
+                    <svg
+                      width="13"
+                      class="mx-1"
+                      height="14"
+                      viewBox="0 0 13 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.5 1.5L7.5 6L12 6C12.5312 6 13 6.46875 13 7C13 7.5625 12.5312 8 12 8H7.5L7.5 12.5C7.5 13.0625 7.03125 13.5 6.5 13.5C5.9375 13.5 5.5 13.0625 5.5 12.5L5.5 8L1 8C0.4375 8 -6.59346e-08 7.5625 -6.16032e-08 7C-5.75123e-08 6.46875 0.4375 6 1 6L5.5 6L5.5 1.5C5.5 0.96875 5.9375 0.5 6.5 0.5C7.03125 0.5 7.5 0.96875 7.5 1.5Z"
+                        fill="#663190"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 section-info">
+                  <div class="form-group">
+                    <label class="form-label mb-2" for="date">{{
+                      "Date" | translate
+                    }}</label>
+                    <div class="form-field-wrapper">
+                      <mat-form-field class="w-100">
+                        <input
+                          matInput
+                          [min]="today"
+                          readonly
+                          [matDatepicker]="picker1"
+                          formControlName="selectedDate"
+                        />
+                        <mat-datepicker-toggle
+                          matIconSuffix
+                          [for]="picker1"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                    <div
+                      *ngIf="
+                        appointmentForm.get('selectedDate')?.invalid &&
+                        appointmentForm.get('selectedDate')?.touched
+                      "
+                      class="text-danger"
+                    >
+                      {{ "Date is required" | translate }}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 section-info">
+                  <div class="form-group">
+                    <label class="form-label mb-2" for="time">{{
+                      "Time" | translate
+                    }}</label>
+                    <div class="form-field-wrapper">
+                      <select
+                        id="time"
+                        class="input-field w-100"
+                        formControlName="selectedTime"
+                      >
+                        <option
+                          *ngIf="!timeOptions || timeOptions.length === 0"
+                          disabled
+                          selected
+                        >
+                          {{ "No available times" | translate }}
+                        </option>
+                        <option
+                          *ngFor="let time of timeOptions"
+                          [ngValue]="time"
+                        >
+                          {{ formatTimeRange(time) }}
+                        </option>
+                      </select>
+                    </div>
+                    <div
+                      *ngIf="
+                        appointmentForm.get('selectedTime')?.invalid &&
+                        appointmentForm.get('selectedTime')?.touched
+                      "
+                      class="text-danger"
+                    >
+                      {{ "Time is required" | translate }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 section-info">
+                  <div class="form-group">
+                    <label class="form-label" for="contactNumber">{{
+                      "Contact Number" | translate
+                    }}</label>
+                    <input
+                      class="input-field w-100"
+                      id="contactNumber"
+                      formControlName="contactNumber"
+                      type="text"
+                      placeholder="{{
+                        'Enter your Contact Number' | translate
+                      }}"
+                    />
+                  </div>
+                  <div
+                    *ngIf="
+                      appointmentForm.get('contactNumber')?.invalid &&
+                      appointmentForm.get('contactNumber')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "Please enter a valid number" | translate }}
+                  </div>
+                </div>
+                <div class="'col-12 col-md-6 section-info'">
+                  <div class="form-group">
+                    <label class="form-label" for="Note"
+                      >{{ "Note" | translate }} ({{
+                        "Optional" | translate
+                      }})</label
+                    >
+                    <input
+                      class="input-field form-control w-100"
+                      id="Note"
+                      formControlName="Note"
+                      type="text"
+                      placeholder="{{ 'Write your Note' | translate }}"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div formArrayName="pacakgeConsultants">
+                    <div
+                      *ngFor="
+                        let consultant of pacakgeConsultants.controls;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
+                      <span
+                        >{{ "Consultant" | translate }}:
+                        {{
+                          baseService.currentLanguage == "ar"
+                            ? getProfessionalName(
+                                consultant.get("consultantId")?.value,
+                                consultant.get("consultantType")?.value
+                              ).nameAr
+                            : getProfessionalName(
+                                consultant.get("consultantId")?.value,
+                                consultant.get("consultantType")?.value
+                              ).nameEn
+                        }}
+                      </span>
+                      <div class="row">
+                        <div class="col-12 col-md-6 section-info">
+                          <div class="form-group">
+                            <label class="form-label mb-2" for="date">{{
+                              "Date" | translate
+                            }}</label>
+                            <div class="form-field-wrapper">
+                              <mat-form-field class="w-100">
+                                <input
+                                  matInput
+                                  [min]="today"
+                                  readonly
+                                  [matDatepicker]="picker1"
+                                  formControlName="date"
+                                />
+                                <mat-datepicker-toggle
+                                  matIconSuffix
+                                  [for]="picker1"
+                                ></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 section-info">
+                          <div class="form-group">
+                            <label class="form-label mb-2" for="time">{{
+                              "Time" | translate
+                            }}</label>
+                            <div class="form-field-wrapper">
+                              <select
+                                id="time"
+                                class="input-field w-100"
+                                formControlName="time"
+                                type="time"
+                              >
+                                <option
+                                  *ngIf="
+                                    getFilteredAvailableTimes(
+                                      consultant.get('consultantId')?.value ??
+                                        0,
+                                      consultant.get('consultantType')?.value ??
+                                        0,
+                                      consultant.get('date')?.value ?? ''
+                                    )?.length === 0
+                                  "
+                                  disabled
+                                  selected
+                                >
+                                  {{ "No available times" | translate }}
+                                </option>
+                                <option
+                                  *ngFor="
+                                    let time of getFilteredAvailableTimes(
+                                      consultant.get('consultantId')?.value ??
+                                        0,
+                                      consultant.get('consultantType')?.value ??
+                                        0,
+                                      consultant.get('date')?.value ?? ''
+                                    )
+                                  "
+                                  [ngValue]="time"
+                                >
+                                  {{ time }}
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="payment-card">
+              <div class="card-title">{{ "Payment Method" | translate }}</div>
+              <div class="d-flex flex-column">
+                @for (paymentType of paymentTypes; track $index) {
+                <label
+                  class="d-flex justify-content-between align-items-center payment-method w-100 cursor-pointer"
+                  [ngClass]="{
+                    'selected-payment':
+                      paymentType.id ===
+                      appointmentForm.get('paymentTypeId')?.value
+                  }"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="ms-2">
+                      @if(paymentType.id == 1) {
+                      <svg
+                        width="18"
+                        height="14"
+                        viewBox="0 0 18 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 0H16C17.0938 0 18 0.90625 18 2V3H0V2C0 0.90625 0.875 0 2 0ZM18 6V12C18 13.125 17.0938 14 16 14H2C0.875 14 0 13.125 0 12V6H18ZM3.5 10C3.21875 10 3 10.25 3 10.5C3 10.7812 3.21875 11 3.5 11H5.5C5.75 11 6 10.7812 6 10.5C6 10.25 5.75 10 5.5 10H3.5ZM7 10.5C7 10.7812 7.21875 11 7.5 11H11.5C11.75 11 12 10.7812 12 10.5C12 10.25 11.75 10 11.5 10H7.5C7.21875 10 7 10.25 7 10.5Z"
+                          fill="#2C143D"
+                        />
+                      </svg>
+                      } @else {
+                      <svg
+                        width="18"
+                        height="16"
+                        viewBox="0 0 18 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 3.53125C0 2.78125 0.78125 2.28125 1.5 2.5C4 3.15625 6.5 2.53125 9 1.90625C11.7188 1.21875 14.4375 0.5 17.1562 1.53125C17.6562 1.71875 18 2.25 18 2.8125V12.5C18 13.25 17.1875 13.75 16.4688 13.5312C13.9688 12.8438 11.4688 13.5 9 14.125C6.28125 14.8125 3.5625 15.5312 0.84375 14.5C0.3125 14.3125 0 13.7812 0 13.2188V3.53125ZM9 11C10.375 11 11.5 9.65625 11.5 8C11.5 6.34375 10.375 5 9 5C7.59375 5 6.5 6.34375 6.5 8C6.5 9.65625 7.59375 11 9 11ZM2 11V13H4C4 11.9062 3.09375 11 2 11ZM4 4.5H2V6.5C3.09375 6.5 4 5.625 4 4.5ZM16 9.5C14.875 9.5 14 10.4062 14 11.5H16V9.5ZM14 3C14 4.125 14.875 5 16 5V3H14Z"
+                          fill="#2C143D"
+                        />
+                      </svg>
+                      }
+                      <span class="mx-2 paymentType selected-text">
+                        {{
+                          baseService.splitTextByLanguage(
+                            paymentType.name || ""
+                          )
+                        }}
+                      </span>
+                    </div>
+                  </div>
+                  <input
+                    type="radio"
+                    [value]="paymentType.id"
+                    formControlName="paymentTypeId"
+                    class="paymentInput"
+                  />
+                </label>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="summery-card">
+              <div class="card-title">
+                <div class="Checkout-container">
+                  <div class="Checkout-header">
+                    <div class="card-title">
+                      {{ "Order Summary" | translate }}
+                    </div>
+                  </div>
+                  <div class="Checkout-body">
+                    <div>
+                      <div class="body-content">
+                        <div class="Checkout-item-card">
+                          <div
+                            class="item-info d-flex flex-row align-items-center justify-content-between w-100"
+                          >
+                            <div class="img-container">
+                              <img
+                                class="item-img"
+                                [src]="
+                                  Package != null
+                                    ? imageUrl + Package.image
+                                    : ''
+                                "
+                              />
+                            </div>
+                            <div
+                              class="info-container d-flex flex-column flex-grow-1 ms-2"
+                            >
+                              <div class="info-name">
+                                @if(Package != null) {
+                                {{
+                                  baseService.currentLanguage == "ar"
+                                    ? Package.nameAr
+                                    : Package.nameEn
+                                }}
+                                }
+                              </div>
+                              <div class="info-chips">
+                                <div class="info-chip-green">
+                                  {{ "Disc" | translate }}
+
+                                  @if(Package != null) {
+                                  {{
+                                    (
+                                      100 -
+                                      (Package.price / Package.priceBefore) *
+                                        100
+                                    ).toFixed(1) + "%"
+                                  }}
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="item-price text-end ms-auto"
+                            [ngClass]="{
+                              'text-end': baseService.currentLanguage !== 'ar'
+                            }"
+                          >
+                            <div class="price text-nowrap">
+                              @if(Package != null) {
+                              {{ Package.price | number : "1.2-2" }}
+                              }
+                              {{ "SAR" | translate }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="voucher-input">
+                        <div class="form-group">
+                          <label class="form-label" for="phoneNumber">{{
+                            "Save on your order" | translate
+                          }}</label>
+                          <div
+                            class="d-flex align-items-center custom-container"
+                            [ngClass]="{ 'error-border': couponError }"
+                          >
+                            <svg
+                              class="custom-svg"
+                              viewBox="0 0 20 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12 1H4C3.068 1 2.602 1 2.234 1.152C1.99137 1.25262 1.77093 1.40005 1.58528 1.58588C1.39963 1.7717 1.2524 1.99227 1.152 2.235C1 2.602 1 3.068 1 4C1.79565 4 2.55871 4.31607 3.12132 4.87868C3.68393 5.44129 4 6.20435 4 7C4 7.79565 3.68393 8.55871 3.12132 9.12132C2.55871 9.68393 1.79565 10 1 10C1 10.932 1 11.398 1.152 11.765C1.2524 12.0077 1.39963 12.2283 1.58528 12.4141C1.77093 12.5999 1.99137 12.7474 2.234 12.848C2.602 13 3.068 13 4 13H12M12 1H16C16.932 1 17.398 1 17.765 1.152C18.0078 1.25251 18.2284 1.3999 18.4143 1.58572C18.6001 1.77155 18.7475 1.99218 18.848 2.235C19 2.602 19 3.068 19 4C18.2044 4 17.4413 4.31607 16.8787 4.87868C16.3161 5.44129 16 6.20435 16 7C16 7.79565 16.3161 8.55871 16.8787 9.12132C17.4413 9.68393 18.2044 10 19 10C19 10.932 19 11.398 18.848 11.765C18.7475 12.0078 18.6001 12.2284 18.4143 12.4143C18.2284 12.6001 18.0078 12.7475 17.765 12.848C17.398 13 16.932 13 16 13H12M12 1V13"
+                                stroke="#AEB1B6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            <input
+                              class="w-100 custom-input"
+                              id="voucher"
+                              [formControl]="couponCodeControl"
+                              type="text"
+                              placeholder="{{
+                                'Enter Voucher Code' | translate
+                              }}"
+                            />
+                            <ng-container
+                              *ngIf="
+                                !couponApplied && !couponError;
+                                else removeButton
+                              "
+                            >
+                              <ng-template #applyButton>
+                                <a
+                                  role="button"
+                                  class="custom-submit"
+                                  (click)="applyCoupon()"
+                                  [class.disabled]="!couponCodeControl.value"
+                                  [attr.aria-disabled]="
+                                    !couponCodeControl.value
+                                  "
+                                >
+                                  {{ "Apply" | translate }}
+                                </a>
+                              </ng-template>
+                              <ng-container
+                                *ngTemplateOutlet="applyButton"
+                              ></ng-container>
+                            </ng-container>
+                            <ng-template #removeButton>
+                              <a
+                                role="button"
+                                class="custom-submit remove-coupon"
+                                (click)="removeCoupon()"
+                                style="color: red"
+                              >
+                                {{ "Remove" | translate }}
+                              </a>
+                            </ng-template>
+                          </div>
+                          <div
+                            *ngIf="coupon && coupon.discountAmount"
+                            class="discount-message mx-2 mt-2 d-flex align-items-center"
+                          >
+                            <svg
+                              width="12"
+                              height="9"
+                              viewBox="0 0 12 9"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M11.3359 0.914062C11.5469 1.14844 11.5469 1.5 11.3359 1.71094L5.14844 7.89844C4.91406 8.13281 4.5625 8.13281 4.35156 7.89844L1.16406 4.71094C0.929688 4.5 0.929688 4.14844 1.16406 3.9375C1.375 3.70312 1.72656 3.70312 1.9375 3.9375L4.72656 6.72656L10.5391 0.914062C10.75 0.703125 11.1016 0.703125 11.3125 0.914062H11.3359Z"
+                                fill="#3BB54A"
+                              />
+                            </svg>
+                            <span class="discount-text"
+                              >{{ coupon.discountAmount }}%
+                              {{ "off" | translate }}</span
+                            >
+                          </div>
+                          <div
+                            *ngIf="couponError"
+                            class="error-message mx-2 mt-2 d-flex align-items-center"
+                          >
+                            <svg
+                              width="19"
+                              height="17"
+                              viewBox="0 0 19 17"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.75 0.375C10.2422 0.375 10.6992 0.65625 10.9453 1.07812L18.5391 14.0156C18.7852 14.4727 18.7852 15 18.5391 15.4219C18.293 15.8789 17.8359 16.125 17.3438 16.125H2.15625C1.62891 16.125 1.17188 15.8789 0.925781 15.4219C0.679688 15 0.679688 14.4727 0.925781 14.0156L8.51953 1.07812C8.76562 0.65625 9.22266 0.375 9.75 0.375ZM9.75 4.875C9.25781 4.875 8.90625 5.26172 8.90625 5.71875V9.65625C8.90625 10.1484 9.25781 10.5 9.75 10.5C10.207 10.5 10.5938 10.1484 10.5938 9.65625V5.71875C10.5938 5.26172 10.207 4.875 9.75 4.875ZM10.875 12.75C10.875 12.1523 10.3477 11.625 9.75 11.625C9.11719 11.625 8.625 12.1523 8.625 12.75C8.625 13.3828 9.11719 13.875 9.75 13.875C10.3477 13.875 10.875 13.3828 10.875 12.75Z"
+                                fill="#D64045"
+                              />
+                            </svg>
+                            <span class="error-message mx-2">
+                              {{
+                                "This voucher code is invalid, please enter a valid code"
+                                  | translate
+                              }}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="summery-data">
+                        <div class="title-summery-data">
+                          {{ "Payment Details" | translate }}
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div class="form-label">{{ "VAT" | translate }}</div>
+                          <div class="summery-price">
+                            {{ calculatedVAT | number : "1.2-2" }}
+                            {{ "SAR" | translate }}
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div class="form-label">
+                            {{ "Discount" | translate }}
+                          </div>
+                          <div class="summery-price">
+                            {{ getDiscount() | number : "1.2-2" }}
+                            {{ "SAR" | translate }}
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div class="form-label">
+                            {{ "Total" | translate }}
+                          </div>
+                          <div class="summery-price">
+                            {{ totalAmount | number : "1.2-2" }}
+                            {{ "SAR" | translate }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    @if(isSubmitting){
+                    <button
+                      class="btn WMbtn-primary cart-button"
+                      disabled="true"
+                    >
+                      <i class="fa-solid fa-spinner fa-spin"></i>
+                    </button>
+                    } @else{
+                    <button class="WMbtn-primary cart-button">
+                      {{ "Confirm Order" | translate }}
+                    </button>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      }
+    </div>
+  </div>
+</div>

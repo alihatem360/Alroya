@@ -1,0 +1,117 @@
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}
+
+.faq-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.faq-title {
+  color: #383141;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.faq-ans {
+  align-self: stretch;
+  color: #706183;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.faq-panel {
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.mat-accordion .mat-expansion-panel:not(.mat-expanded),
+.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
+  border-radius: 12px;
+}
+
+.mat-accordion .mat-expansion-panel:first-of-type {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.mat-accordion .mat-expansion-panel:last-of-type {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: 0px 0px;
+}
+
+.mat-expansion-panel-header {
+  height: 88px;
+  padding: 0px 24px;
+}
+
+.mat-expansion-panel:not(.mat-expanded)
+  .mat-expansion-panel-header:not([aria-disabled="true"]) {
+  border: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.mat-expansion-panel:not(.mat-expanded)
+  .mat-expansion-panel-header:not([aria-disabled="true"]):hover {
+  background: rgba(02, 42, 178, 0.04);
+}
+
+.mat-expansion-panel.mat-expanded {
+  border: 2px solid #613190;
+  padding-bottom: 8px;
+  box-shadow: 0px 4px 20px 0px rgba(97, 49, 144, 0.15);
+}
+
+.mat-expansion-panel-body {
+  padding: 0 24px 24px;
+}
+
+.faq-box {
+  padding-top: 16px;
+}
+
+//********* Media Query *****************************
+
+@media (max-width: 768px) {
+  .faq-title {
+    color: #383141;
+    font-family: Cairo;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 14.4px */
+  }
+
+  .faq-ans {
+    color: #706183;
+    font-family: Cairo;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .mat-expansion-panel-header {
+    height: 72px;
+    padding: 24px;
+  }
+}

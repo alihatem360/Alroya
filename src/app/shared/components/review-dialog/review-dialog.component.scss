@@ -1,0 +1,99 @@
+.review-dialog {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: #663190;
+  
+    .dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      h2 {
+        margin: 0;
+      }
+  
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  
+    .dialog-body {
+      margin-top: 20px;
+  
+      .star-rating {
+   
+        margin-bottom: 20px;
+  
+        span {
+          font-size: 30px;
+          color: #ccc;
+          cursor: pointer;
+          transition: transform 0.2s, color 0.2s;
+  
+          &:hover {
+            transform: scale(1.2);
+          }
+  
+          &.filled {
+            color: #663190;
+          }
+        }
+  
+        span:hover ~ span {
+          color: #ccc !important;
+        }
+      }
+  
+      label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+      }
+  
+      textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        resize: none;
+        height: 120px;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: #663190;
+          box-shadow: 0 0 5px rgba(102, 49, 144, 0.5);
+          outline: none;
+        }
+      }
+    }
+  
+    .dialog-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  
+      .submit-btn, .cancel-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .submit-btn {
+        background-color: #663190;
+        color: white;
+      }
+  
+      .cancel-btn {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+    }
+  }
+  

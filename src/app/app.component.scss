@@ -1,0 +1,79 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+app-footer {
+  flex-shrink: 0;
+  background-color: white;
+}
+.content-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbf6ff;
+}
+
+mat-sidenav {
+  width: 490px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.sidenav-cart-container {
+  background-color: white !important;
+}
+#progress {
+  display: none;
+  position: fixed;
+  bottom: 30px; /* Place the button 30px from the bottom */
+  right: 10px; /* Place the button 10px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  width: 50px; /* Adjust width */
+  height: 50px; /* Adjust height */
+  border-radius: 50%; /* Rounded corners */
+  background: conic-gradient(
+    #2c143d 0%,
+    #2c143d 30%,
+    rgb(215, 215, 215) 30%,
+    rgb(215, 215, 215) 100%
+  );
+  display: grid; /* Use grid to center the icon */
+  place-items: center; /* Center the icon */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  transition: background 0.3s; /* Smooth transition for background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+#progress-value {
+  display: block;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #2c143d;
+}
+.content-wrapper.show-header {
+  margin-top: 113px;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper.show-header {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper.show-header {
+    margin-top: 80px;
+  }
+}

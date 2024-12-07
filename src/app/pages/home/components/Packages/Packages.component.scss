@@ -1,0 +1,66 @@
+.section-landing {
+  padding-bottom: 120px;
+}
+
+@media (max-width: 576px) {
+  .section-landing {
+    padding-bottom: 30px;
+  }
+}
+.box {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.image-package img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 15px;
+}
+
+.service-name {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.pricing {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.discounted-price {
+  font-size: 1.5rem;
+  color: #663190;
+  font-weight: bold;
+}
+
+.discount-badge {
+  background-color: #ebdff4;
+  color: #663190;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}

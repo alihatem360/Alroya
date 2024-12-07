@@ -1,0 +1,493 @@
+.bg-landing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #fbf6ff;
+  }
+  .section-heeder-title {
+    color: rgba(44, 20, 61, 1);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    margin-bottom: 32px;
+  }
+  
+  .mb-25px {
+    margin-bottom: 25px;
+  }
+  
+  .info-card,
+  .payment-card,
+  .Checkout-container {
+    padding: 32px 32px 32px 32px;
+    border-radius: 7px;
+    background: var(--Min-Colors-White, #fff);
+    align-items: flex-start;
+  }
+  
+  .info-card,
+  .payment-card {
+    margin-bottom: 17px;
+  }
+  
+  .cart-button {
+    display: flex;
+    width: 100%;
+    padding: 24px 56px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 24px;
+    transition: 0.1s all;
+    border: none;
+  }
+  
+  .card-title {
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+  }
+  .info-card .card-title,
+  .payment-card .card-title {
+    margin-bottom: 23px;
+  }
+  
+  .paymentType {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: justify;
+    color: #123143;
+  }
+  .paymentInput {
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #e2e6e9;
+    border-radius: 8px;
+  }
+  
+  .form-label {
+    align-self: stretch;
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .input-button {
+    border-radius: 8px;
+    padding: 5px 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  input:focus {
+    border-color: #2C143D !important;
+  }
+  input:focus {
+  box-shadow: none;
+  border-color: #2C143D;
+  }
+  .input-field {
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 13px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(226, 230, 233, 1);
+  }
+  .item-button {
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  
+  .p {
+    color: rgba(44, 20, 61, 1);
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .Checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .Checkout-btn {
+    display: flex;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 30px;
+    background: var(--black-white-colors-gray-1, #e2e6e9);
+    align-items: flex-start;
+  }
+  
+  .Checkout-body {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--black-white-colors-gray-1, #e2e6e9);
+    flex-shrink: 0;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .body-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .body-header-title {
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+  }
+  
+  .card-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #e2e6e9;
+    margin-top: 15px;
+    margin-bottom: 23.5px;
+  }
+  
+  .item-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #e2e6e9;
+  }
+  
+  .body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .Checkout-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    padding-top: 24px;
+  }
+  
+  .voucher-input {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 24px;
+  }
+  
+  .summery-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .item-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
+  }
+  
+  .img-container {
+    display: flex;
+    width: 36%;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--black-white-colors-gray-1, #e2e6e9);
+    background: var(--Min-Colors-White, #fff);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+  
+  .item-img {
+    width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .info-name {
+    align-self: stretch;
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+  }
+  
+  .info-description {
+    align-self: stretch;
+    color: var(--black-white-colors-gray-3, #a5a5a5);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .info-chips {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .info-chip-green {
+    display: flex;
+    overflow: hidden;
+    padding: 4px;
+    border-radius: 4px;
+    background: var(--Success-Color-Green-Lighto2, #d0ecd6);
+    justify-content: center;
+    align-items: center;
+    color: var(--Secondary-3-Green-Dark, #26732f);
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 32px;
+    -webkit-margin-start: 20px;
+    margin-inline-start: 20px;
+  }
+  
+  .price {
+    align-self: stretch;
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+  }
+  
+  .delete-button {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background: var(--Primary-colors-Purple-Light02, #ebdff4);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Checkout-button {
+    display: flex;
+    width: 100%;
+    padding: 24px 56px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 24px;
+  }
+  
+  .custom-container {
+    border: 1px solid #e2e6e9;
+    padding: 12px 10px 9px 10px;
+    gap: 10px;
+    border-radius: 4px;
+  }
+  
+  .custom-svg {
+    width: 20px;
+    height: 14px;
+  }
+  
+  .custom-input {
+    border: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+  }
+  
+  .custom-submit {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.06px;
+    color: #663190;
+  }
+  .custom-input:focus-visible {
+    outline: none;
+    border: none; 
+  }
+  
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .error-text {
+    margin-left: 8px;
+  }
+  .error-border {
+    border: 1px solid var(--Error-Color-Red, #D64045);
+  }
+  .section-info{
+    margin-bottom: 25px;
+  }
+  .title-summery-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .icon-payment{
+    width: 18px;
+    height: 14px;
+  }
+  .breadcrumbs-section{
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    .icon-payment{
+      width: 12px;
+      height: 10px;
+    }
+  .card-title {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+  .info-card,
+  .payment-card,
+  .Checkout-container {
+    padding: 15px !important;
+  }
+  .input-button {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 32px !important;
+    padding: 0 !important;
+  }
+  .input-field {
+    font-size: 9px !important;
+    padding: 6px !important;
+   font-weight: 500 !important;
+   height: 32px !important;
+  }
+  .section-info{
+    margin-bottom: 15px !important;
+  }
+  .bg-landing{
+    padding-top: 10px !important;
+  }
+  .payment-method{
+    padding: 8px !important;
+  }
+  .paymentType{
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+  .card-title{
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+  }
+  .Checkout-header{
+    margin-bottom: 15px !important;
+    border-bottom: 1px solid #E2E6E9 !important;
+  }
+  .Checkout-body{
+    padding: 0px !important; 
+    border:none !important
+  }
+  .Checkout-item-card{
+    padding-top: 0px !important;
+  }
+  .img-container{
+    border: none !important;
+    width: 35% !important;
+    height: 100% !important;
+  }
+  .info-container {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .body-content{
+   border-bottom: 1px solid #E2E6E9 !important;
+   padding-bottom: 15px !important;
+  }
+  .voucher-input {
+    padding-top: 0px !important;
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+  }
+  .title-summery-data{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+  .cart-button{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 13px 56px !important;
+  }
+  .price {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .section-heeder-title {
+    margin-bottom: 10px !important;
+  }
+  .breadcrumb {
+    margin-bottom: 0 !important;
+  }
+  .item-info{
+    gap: 7px;
+  }
+  .breadcrumbs-section{
+    margin-bottom: 0.5rem;
+  }
+  }

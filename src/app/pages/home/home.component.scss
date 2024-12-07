@@ -1,0 +1,19 @@
+.section-landing {
+  padding-bottom: 120px;
+}
+
+.bg-landing {
+  padding-top: 70px;
+  background: #fbf6ff;
+}
+
+@media(max-width:576px){
+  
+.bg-landing {
+  padding-top:23px;
+  background: #fbf6ff;
+}
+.section-landing {
+  padding-bottom: 30px;
+}
+}

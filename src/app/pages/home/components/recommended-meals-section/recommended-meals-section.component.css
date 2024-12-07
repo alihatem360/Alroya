@@ -1,0 +1,106 @@
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}
+
+.section-landing {
+  padding-bottom: 120px;
+}
+
+@media (max-width: 576px) {
+  .section-landing {
+    padding-bottom: 30px;
+  }
+}
+p,
+span {
+  padding: 0px;
+  margin: 0px;
+}
+
+.subheading p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #a5a5a5;
+  padding-bottom: 16px;
+  margin: 0px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.service-title {
+  color: var(--black-white-colors-gray-3, #a5a5a5);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  margin-bottom: 30px;
+}
+
+.feature-text {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.44px;
+  letter-spacing: -0.02em;
+  color: #2c143d;
+}
+
+.recommended-section {
+  padding-bottom: 16px;
+}
+
+.WMbtn-primary {
+  padding: 10px 22px;
+}
+
+.circle-number {
+  display: inline-block;
+  width: 40px;
+  /* Adjust size */
+  height: 40px;
+  /* Adjust size */
+  background-color: #663190;
+  /* Purple color from your image */
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  /* Ensure text is vertically centered */
+  font-size: 20px;
+  /* Adjust text size */
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .image-recommend {
+    padding-top: 16px;
+  }
+  .recommended-section {
+    gap: 16px;
+  }
+  .service-title {
+    margin: 12px 0px;
+  }
+  .WMbtn-primary {
+    padding: 10px 22px !important;
+  }
+}/*# sourceMappingURL=recommended-meals-section.component.css.map */

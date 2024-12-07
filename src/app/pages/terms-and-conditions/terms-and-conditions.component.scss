@@ -1,0 +1,86 @@
+.section-landing {
+    padding-bottom: 10rem;
+  }
+  
+  .bg-landing {
+    padding-top: 25px;
+    background: #fbf6ff;
+  }
+  .section-heeder{
+    background: linear-gradient(90deg, #663190 0%, #49057F 100%);
+   padding: 20px 0;
+    text-align: center;
+  }
+  .section-heeder-title{
+    font-size: 52px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+
+  }
+  .section-Title{
+    font-size: 24px;
+    font-weight: 700;
+    color:rgba(102, 49, 144, 1);
+  }
+  .section-sub-title{
+    font-size: 24px;
+    font-weight: 400;
+    color:rgba(107, 107, 107, 1);
+    
+  }
+  .terms-list {
+    list-style-type: disc; /* Bulleted list */
+    margin-left: 20px; /* Indent the list */
+    padding-left: 10px; /* Add space between the bullet and text */
+}
+
+.terms-list li {
+    margin-bottom: 10px; /* Space between each list item */
+}
+.section{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.breadcrumb{
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  .section-heeder-title{
+    font-size: 16px !important;
+  }
+  .section-heeder-title p{
+    margin-bottom: 0;
+  }
+
+  .section-Title{
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .section-sub-title{
+    font-size: 12px;
+  }
+
+  .section-Title p{
+    margin-bottom: 0;
+  }
+
+ .section-sub-title p{
+    margin-bottom: 0;
+  }
+
+  .section{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-heeder {
+    margin-bottom: 5px !important;
+    margin-top: 0px !important;
+}
+.breadcrumb{
+  margin-bottom: 0 !important;
+}
+.bg-landing {
+  padding-top: 12px !important;
+  padding-bottom: 35px !important;
+}
+}

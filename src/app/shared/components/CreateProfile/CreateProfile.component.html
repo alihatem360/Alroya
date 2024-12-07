@@ -1,0 +1,384 @@
+<div class="add-profile">
+  <div class="d-flex align-items-center justify-content-between">
+    <h2 class="profile-title c-fs-18">
+      <ng-container *ngIf="id; else addNew">
+       {{"Update Data Member" | translate}} 
+      </ng-container>
+      <ng-template #addNew>
+        
+        {{"Add New Member" | translate}} 
+      </ng-template>
+    </h2>
+    <button class="btn p-0" mat-dialog-close>
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="27.8822" height="27.88" rx="13.94" fill="#E2E6E9" />
+        <path
+          d="M15.002 13.9415L17.6532 11.2895C17.7248 11.2203 17.782 11.1375 17.8213 11.046C17.8606 10.9545 17.8813 10.8561 17.8822 10.7565C17.883 10.6569 17.864 10.5582 17.8263 10.466C17.7886 10.3738 17.7329 10.2901 17.6625 10.2197C17.5921 10.1493 17.5084 10.0936 17.4162 10.0558C17.324 10.0181 17.2252 9.99916 17.1257 10C17.0261 10.0009 16.9277 10.0216 16.8362 10.0609C16.7447 10.1002 16.6619 10.1573 16.5927 10.229L13.9407 12.8802L11.2895 10.229C11.2203 10.1573 11.1375 10.1002 11.046 10.0609C10.9545 10.0216 10.8561 10.0009 10.7565 10C10.6569 9.99916 10.5582 10.0181 10.466 10.0558C10.3738 10.0936 10.2901 10.1493 10.2197 10.2197C10.1493 10.2901 10.0936 10.3738 10.0558 10.466C10.0181 10.5582 9.99916 10.6569 10 10.7565C10.0009 10.8561 10.0216 10.9545 10.0609 11.046C10.1002 11.1375 10.1573 11.2203 10.229 11.2895L12.8802 13.9407L10.229 16.5927C10.1573 16.6619 10.1002 16.7447 10.0609 16.8362C10.0216 16.9277 10.0009 17.0261 10 17.1257C9.99916 17.2252 10.0181 17.324 10.0558 17.4162C10.0936 17.5084 10.1493 17.5921 10.2197 17.6625C10.2901 17.7329 10.3738 17.7886 10.466 17.8263C10.5582 17.864 10.6569 17.883 10.7565 17.8822C10.8561 17.8813 10.9545 17.8606 11.046 17.8213C11.1375 17.782 11.2203 17.7248 11.2895 17.6532L13.9407 15.002L16.5927 17.6532C16.6619 17.7248 16.7447 17.782 16.8362 17.8213C16.9277 17.8606 17.0261 17.8813 17.1257 17.8822C17.2252 17.883 17.324 17.864 17.4162 17.8263C17.5084 17.7886 17.5921 17.7329 17.6625 17.6625C17.7329 17.5921 17.7886 17.5084 17.8263 17.4162C17.864 17.324 17.883 17.2252 17.8822 17.1257C17.8813 17.0261 17.8606 16.9277 17.8213 16.8362C17.782 16.7447 17.7248 16.6619 17.6532 16.5927L15.002 13.9415Z"
+          fill="#2C143D"
+        />
+      </svg>
+    </button>
+  </div>
+  <hr class="profile-divider" />
+  <div class="d-flex align-items-center mb-3">
+    <div class="profile-image-container position-relative cursor-pointer">
+      <img
+      (click)="triggerFileInput()" 
+        class="profile-image"
+        [src]="imagePreview == null? 'assets/images/img/Male-Patient.png' : imagePreview"
+        alt="Profile Picture"
+      />
+      <div
+        class="delete-icon"
+        (click)="deleteSelectedFile()"
+        [ngClass]="{ 'd-none': imagePreview == null }"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          fill="none"
+        >
+          <path
+            d="M5.00197 3.94147L7.65322 1.28947C7.72485 1.22028 7.78199 1.13752 7.82129 1.04602C7.8606 0.954516 7.88129 0.856102 7.88215 0.756517C7.88302 0.656933 7.86404 0.558173 7.82633 0.466001C7.78862 0.373828 7.73293 0.290089 7.66251 0.21967C7.59209 0.14925 7.50835 0.0935606 7.41618 0.0558499C7.32401 0.0181393 7.22525 -0.000837045 7.12567 2.83175e-05C7.02608 0.00089368 6.92767 0.0215834 6.83616 0.0608901C6.74466 0.100197 6.6619 0.157334 6.59272 0.228966L3.94072 2.88022L1.28947 0.228966C1.22028 0.157334 1.13752 0.100197 1.04602 0.0608901C0.954516 0.0215834 0.856102 0.00089368 0.756517 2.83175e-05C0.656933 -0.000837045 0.558173 0.0181393 0.466001 0.0558499C0.373828 0.0935606 0.290089 0.14925 0.21967 0.21967C0.14925 0.290089 0.0935606 0.373828 0.0558499 0.466001C0.0181393 0.558173 -0.000837045 0.656933 2.83175e-05 0.756517C0.00089368 0.856102 0.0215834 0.954516 0.0608901 1.04602C0.100197 1.13752 0.157334 1.22028 0.228966 1.28947L2.88022 3.94072L0.228966 6.59272C0.157334 6.6619 0.100197 6.74466 0.0608901 6.83616C0.0215834 6.92767 0.00089368 7.02608 2.83175e-05 7.12567C-0.000837045 7.22525 0.0181393 7.32401 0.0558499 7.41618C0.0935606 7.50835 0.14925 7.59209 0.21967 7.66251C0.290089 7.73293 0.373828 7.78862 0.466001 7.82633C0.558173 7.86404 0.656933 7.88302 0.756517 7.88215C0.856102 7.88129 0.954516 7.8606 1.04602 7.82129C1.13752 7.78199 1.22028 7.72485 1.28947 7.65322L3.94072 5.00197L6.59272 7.65322C6.6619 7.72485 6.74466 7.78199 6.83616 7.82129C6.92767 7.8606 7.02608 7.88129 7.12567 7.88215C7.22525 7.88302 7.32401 7.86404 7.41618 7.82633C7.50835 7.78862 7.59209 7.73293 7.66251 7.66251C7.73293 7.59209 7.78862 7.50835 7.82633 7.41618C7.86404 7.32401 7.88302 7.22525 7.88215 7.12567C7.88129 7.02608 7.8606 6.92767 7.82129 6.83616C7.78199 6.74466 7.72485 6.6619 7.65322 6.59272L5.00197 3.94147Z"
+            fill="#FFF"
+          />
+        </svg>
+      </div>
+      <div class="upload-icon">
+        <svg
+          width="9"
+          height="9"
+          viewBox="0 0 9 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.89062 1.80176H6.875C6.73438 1.66113 6.5 1.66113 6.35938 1.80176L5.89062 2.25488L6.625 2.98926L7.07812 2.52051C7.21875 2.37988 7.21875 2.14551 7.07812 1.98926L6.89062 1.80176ZM3.26562 4.89551C3.21875 4.92676 3.1875 4.98926 3.17188 5.05176L2.90625 5.95801L3.82812 5.70801C3.89062 5.69238 3.9375 5.66113 3.98438 5.61426L6.09375 3.50488L5.375 2.78613L3.26562 4.89551ZM5.82812 1.27051C6.26562 0.833008 6.96875 0.833008 7.40625 1.27051L7.60938 1.47363C8.04688 1.91113 8.04688 2.61426 7.60938 3.05176L4.51562 6.14551C4.39062 6.27051 4.21875 6.36426 4.03125 6.42676L2.46875 6.86426C2.34375 6.91113 2.20312 6.87988 2.10938 6.77051C2 6.67676 1.96875 6.53613 2 6.41113L2.45312 4.84863C2.5 4.66113 2.60938 4.48926 2.73438 4.36426L5.82812 1.27051ZM1.375 1.87988H3.125C3.32812 1.87988 3.5 2.05176 3.5 2.25488C3.5 2.47363 3.32812 2.62988 3.125 2.62988H1.375C1.01562 2.62988 0.75 2.91113 0.75 3.25488V7.50488C0.75 7.86426 1.01562 8.12988 1.375 8.12988H5.625C5.96875 8.12988 6.25 7.86426 6.25 7.50488V5.75488C6.25 5.55176 6.40625 5.37988 6.625 5.37988C6.82812 5.37988 7 5.55176 7 5.75488V7.50488C7 8.27051 6.375 8.87988 5.625 8.87988H1.375C0.609375 8.87988 0 8.27051 0 7.50488V3.25488C0 2.50488 0.609375 1.87988 1.375 1.87988Z"
+            fill="#2C143D"
+          />
+        </svg>
+        <input
+          #fileInput
+          class="img-input-profile cursor-pointer"
+          (change)="onFileSelected($event)"
+          accept=".png,.jpg,.jpeg"
+          type="file"
+        />
+      </div>
+    </div>
+    <div>
+      <h3 class="profile-image-title c-fs-16">{{"Profile Picture" | translate}} </h3>
+      <p class="profile-image-subtitle c-fs-12">
+        {{"Change your profile picture to PNG, JPG max size 5 MB" | translate}} 
+      </p>
+    </div>
+  </div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label class="form-label" for="firstName">{{"First Name" | translate}}</label>
+        <input
+        class="form-control"
+          id="firstName"
+          formControlName="firstName"
+          type="text"
+          [ngClass]="{
+            'border-danger':
+             profileForm.get('firstName')?.invalid &&
+              profileForm.get('firstName')?.touched
+          }"
+          placeholder='{{"Enter your first name" | translate}}'
+        />
+        @if (profileForm.get('firstName')?.touched &&
+        profileForm.get('firstName')?.invalid) {
+        <div class="error">
+          @if (profileForm.get('firstName')?.errors?.['required'])
+       
+          {
+            <svg
+            width="20"
+            height="17"
+            viewBox="0 0 20 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+              fill="#D64045"
+            />
+          </svg>
+          <span class="text-danger-error mx-2">
+            {{
+              "The first name must be at least three letters long."
+                | translate
+            }}</span
+          >
+           }
+       
+       
+          </div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="middleName">{{"Middle Name" | translate}}</label>
+        <input
+        class="form-control"
+          id="middleName"
+          formControlName="middleName"
+          type="text"
+          placeholder='{{"Enter your middle name" | translate}}'
+        />
+        @if (profileForm.get('middleName')?.touched &&
+        profileForm.get('middleName')?.invalid) {
+        <div class="error">
+          @if (profileForm.get('middleName')?.errors?.['required']) 
+          { Middle name is required. }
+        </div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="lastName">{{"Last Name" | translate}}</label>
+        <input
+        class="form-control"
+          id="lastName"
+          formControlName="lastName"
+          type="text"
+          [ngClass]="{
+            'border-danger':
+             profileForm.get('lastName')?.invalid &&
+              profileForm.get('lastName')?.touched
+          }"
+          placeholder='{{"Enter your last name" | translate}}'
+        />
+        @if (profileForm.get('lastName')?.touched &&
+        profileForm.get('lastName')?.invalid) {
+        <div class="error">
+          @if (profileForm.get('lastName')?.errors?.['required'])
+           {
+            <svg
+            width="20"
+            height="17"
+            viewBox="0 0 20 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+              fill="#D64045"
+            />
+          </svg>
+          <span class="text-danger-error mx-2">
+            {{
+              "Last Name must be at least three letters long."
+                | translate
+            }}</span
+          >
+           }
+        </div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="idNumber">{{"ID Number" | translate}}</label>
+        <input
+        class="form-control"
+          id="idNumber"
+          formControlName="idNumber"
+          type="text"
+          [ngClass]="{
+            'border-danger':
+            profileForm.get('idNumber')?.invalid &&
+              profileForm.get('idNumber')?.touched
+          }"
+          placeholder='{{"Enter your ID number" | translate}}'
+        />
+        @if (profileForm.get('idNumber')?.touched &&
+        profileForm.get('idNumber')?.invalid) {
+        <div class="error">
+          @if (profileForm.get('idNumber')?.errors?.['required'] ||  profileForm.get('idNumber')?.invalid) 
+          {
+            <svg
+            width="20"
+            height="17"
+            viewBox="0 0 20 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+              fill="#D64045"
+            />
+          </svg>
+          <span class="text-danger-error mx-2">
+            {{
+              "Please provide a valid 10-digit ID number." | translate
+            }}</span
+          >
+          }
+        </div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="isMale">{{"Gender" | translate}}</label>
+        <select id="isMale" formControlName="isMale">
+          <option [ngValue]="true">{{"Male" | translate}}</option>
+          <option [ngValue]="false">{{"Female" | translate}}</option>
+        </select>
+        @if (profileForm.get('isMale')?.touched &&
+        profileForm.get('isMale')?.invalid) {
+        <div class="error">{{'Gender is required.' | translate}}</div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="nationalityId">{{"Nationality" | translate}}</label>
+        <select id="nationalityId" formControlName="nationalityId">
+          @for (nationality of nationalities; track nationality.id) {
+          <option [ngValue]="nationality.id">{{ baseService.splitTextByLanguage(nationality.name) }}</option>
+          }
+        </select>
+        @if (profileForm.get('nationalityId')?.invalid &&
+        (profileForm.get('nationalityId')?.dirty ||
+        profileForm.get('nationalityId')?.touched)) {
+        <div class="error">{{'Nationality is required.' | translate}}</div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="languageId">{{"Language" | translate}}</label>
+        <select id="languageId" formControlName="languageId">
+          @for (language of languages; track language.id) {
+          <option [ngValue]="language.id">
+            {{ baseService.splitTextByLanguage(language.name) }}  
+          </option>
+          }
+        </select>
+        @if (profileForm.get('languageId')?.invalid &&
+        (profileForm.get('languageId')?.dirty ||
+        profileForm.get('languageId')?.touched)) {
+        <div class="error">{{'Language is required.' | translate}}</div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="relationshipId">{{"Relationship" | translate}}</label>
+        <select id="relationshipId" formControlName="relationshipId">
+          @for (relationship of relationships; track relationship.id) {
+            <option [ngValue]="relationship.id">
+              {{ baseService.splitTextByLanguage(relationship.name) }}           
+            </option>
+          }
+          
+        </select>
+        @if (profileForm.get('relationshipId')?.invalid &&
+        (profileForm.get('relationshipId')?.dirty ||
+        profileForm.get('relationshipId')?.touched)) {
+        <div class="error">Relationship is required.</div>
+        }
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="birthDate">{{"Birth Date" | translate}}</label>
+        <input
+        class="form-control"
+          id="birthDate"
+          formControlName="birthDate"
+          type="date"
+          placeholder="Select your birth date"
+        />
+        @if (profileForm.get('birthDate')?.touched &&
+        profileForm.get('birthDate')?.invalid) {
+        <div class="error">{{'Birth date is required.' | translate}}</div>
+        }
+      </div>
+      <div class="col-md-6 mb-2">
+       
+          <label class="form-label mb-3" for="phone">{{
+            "Phone Number" | translate
+          }}</label>
+
+          <ngx-intl-tel-input
+            formControlName="phone"
+            [cssClass]="'tel-input-custom-createProfile'"
+            [preferredCountries]="[
+              'sa',
+              'eg',
+              'ae',
+              'bh',
+              'kw',
+              'om',
+              'qa',
+              'jo',
+              'lb',
+              'sy',
+              'iq'
+            ]"
+            [enableAutoCountrySelect]="true"
+            [enablePlaceholder]="true"
+            [selectFirstCountry]="true"
+            [phoneValidation]="true"
+            [ngClass]="{
+              'border-danger': profileForm.get('phone')?.invalid && profileForm.get('phone')?.touched,
+            }"
+          ></ngx-intl-tel-input>
+
+          <div
+            class="mt-1"
+            *ngIf="
+              profileForm.get('phone')?.invalid &&
+              profileForm.get('phone')?.touched
+            "
+          >
+            <svg
+              width="20"
+              height="17"
+              viewBox="0 0 20 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                fill="#D64045"
+              />
+            </svg>
+            <span class="text-danger-error mx-2">
+              {{ "Phone Number is required" | translate }}</span
+            >
+          </div>
+   
+      </div>
+    </div>
+
+<div class="text-end">
+  @if (loading) {
+    <button
+      type="submit"
+      class="btn WMbtn-primary save-button "
+      disabled="true"
+    >
+      <i class="fa-solid fa-spinner fa-spin"></i>
+    </button>
+  } @else {
+    <button
+      type="submit"
+      class="btn WMbtn-primary save-button"
+      [disabled]="!profileForm.valid || loading"
+    >
+      {{"Save" | translate}}
+    </button>
+  }
+</div>
+
+  </form>
+</div>

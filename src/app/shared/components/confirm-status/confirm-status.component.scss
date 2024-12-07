@@ -1,0 +1,85 @@
+.order-success-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 8px;   
+    padding: 40px 2px 2px 2px; 
+  }
+  .checkmark-icon {
+    margin-bottom: 20px;
+  }
+  .message {
+    color: rgba(44, 20, 61, 1);
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .description {
+    color: rgba(165, 165, 165, 1);
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px auto 25px; /* Center the text */
+  max-width: 400px; /* Adjust the maximum width as needed */
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-bottom: 3rem;
+  }
+  
+  .close-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #E2E6E9;
+  margin: 20px 18px 0 18px;
+  border: none; /* Remove the default button border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  }
+ .icon-success{
+  width: 119px;
+  height: 119px;
+ }
+ .icon-error{
+  width: 93px;
+  height: 84px;
+ }
+ .cdk-overlay-pane.mat-mdc-dialog-panel{
+  max-width: 95vw !important;
+ }
+ @media (max-width: 768px) {
+  .icon-success{
+    width: 80px;
+    height: 80px;
+   }
+   .icon-error{
+    width: 85px;
+    height: 76px;
+   }
+   .cdk-overlay-pane.mat-mdc-dialog-panel{
+    max-width: 95vw !important;
+   }
+   .message {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .description{
+    color: rgb(165, 165, 165);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.button-group {
+  gap: 28px;
+}
+
+.item-button{
+  padding: 7px 17px !important;
+  border-radius: 8px !important;
+}
+.WMbtn-primary {
+  font-size: 16px !important;
+}
+ }
+ 

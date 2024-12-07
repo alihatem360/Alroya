@@ -1,0 +1,81 @@
+.review-dialog {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  color: #663190;
+}
+.review-dialog .dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.review-dialog .dialog-header h2 {
+  margin: 0;
+}
+.review-dialog .dialog-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.review-dialog .dialog-body {
+  margin-top: 20px;
+}
+.review-dialog .dialog-body .star-rating {
+  margin-bottom: 20px;
+}
+.review-dialog .dialog-body .star-rating span {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+.review-dialog .dialog-body .star-rating span:hover {
+  transform: scale(1.2);
+}
+.review-dialog .dialog-body .star-rating span.filled {
+  color: #663190;
+}
+.review-dialog .dialog-body .star-rating span:hover ~ span {
+  color: #ccc !important;
+}
+.review-dialog .dialog-body label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.review-dialog .dialog-body textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  resize: none;
+  height: 120px;
+  transition: border-color 0.3s ease;
+}
+.review-dialog .dialog-body textarea:focus {
+  border-color: #663190;
+  box-shadow: 0 0 5px rgba(102, 49, 144, 0.5);
+  outline: none;
+}
+.review-dialog .dialog-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.review-dialog .dialog-footer .submit-btn, .review-dialog .dialog-footer .cancel-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.review-dialog .dialog-footer .submit-btn {
+  background-color: #663190;
+  color: white;
+}
+.review-dialog .dialog-footer .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}/*# sourceMappingURL=review-dialog.component.css.map */

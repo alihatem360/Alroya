@@ -1,0 +1,40 @@
+@if(tests == undefined) {
+    <app-loading></app-loading>
+  } @else if(tests.length == 0) {
+    <div>empty</div>
+  } @else {
+    @for (test of tests; track $index) {
+      <app-test-card [test]="test"></app-test-card>
+    }
+  }
+  
+  @if(kitchenPrograms && kitchenPrograms.length > 0)
+   {
+    @for (kitchenProgram of kitchenPrograms; track $index) {
+      <app-kitchen-program-card [kitchenPrograms]="kitchenProgram"></app-kitchen-program-card>
+    }
+  } 
+  @else {
+    <div>{{"No Program available" | translate}}</div>
+  }
+  
+  @if(clinicPrograms && clinicPrograms.length > 0)
+  {
+   @for (clinicProgram of clinicPrograms; track $index) {
+     <app-clinic-program-card [clinicPrograms]="clinicProgram"></app-clinic-program-card>
+   }
+ } 
+ @else {
+  <div>{{"No Program available" | translate}}</div>
+}
+ 
+
+ @if(planPrograms && planPrograms.length > 0)
+ {
+  @for (planProgram of planPrograms; track $index) {
+    <app-gym-plan-card [gymPlans]="planProgram"></app-gym-plan-card>
+  }
+} 
+@else {
+  <div>{{"No Program available" | translate}}</div>
+}

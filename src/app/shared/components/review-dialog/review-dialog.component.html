@@ -1,0 +1,37 @@
+<div class="review-dialog">
+    <div class="dialog-header">
+      <h2>{{'Add Review' | translate}}</h2>
+      <button class="close-btn" (click)="closeDialog()">×</button>
+    </div>
+  
+    <div class="dialog-body">
+      <p>{{'Please rate the service' |  translate}}</p>
+      
+      <!-- Star Rating System -->
+      <div class="star-rating">
+        <span *ngFor="let star of stars; let i = index" 
+              [ngClass]="{'filled': i < rating}" 
+              (click)="setRating(i + 1)">&#9733;</span>
+      </div>
+  
+      <!-- Optional Comment -->
+      <label for="review-comment">{{'Comment (Optional)' | translate}}</label>
+      <textarea id="review-comment" [(ngModel)]="reviewComment"></textarea>
+    </div>
+  
+    <div class="dialog-footer">
+`
+        @if(isSubmitting){
+            <button
+              class="btn WMbtn-primary cart-button"
+              disabled="true">
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            </button>
+            } @else{
+                <button class="submit-btn" (click)="submitReview()">{{'Submit Now' | translate}}</button>
+
+            }
+      <button class="cancel-btn" (click)="closeDialog()">{{'Cancel' | translate }}</button>
+    </div>
+  </div>
+  

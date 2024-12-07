@@ -1,0 +1,115 @@
+<div class="bg-landing">
+  <div class="container">
+    <div class="mb-4">
+      <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    </div>
+
+    <!-- Loading Indicator -->
+    @if(isLoading) {
+    <app-loading></app-loading>
+    } @else {
+    <div>
+      <div class="row g-4">
+        <div class="package-title">
+          {{
+            baseService.currentLanguage == "ar"
+              ? package?.nameAr
+              : package?.nameEn
+          }}
+        </div>
+        <div
+          class="col-md-12 col-12 col-sm-12 col-lg-6 col-xl-6 order-2 order-md-1"
+        >
+          <div class="item-description">
+            {{ baseService.splitTextByLanguage(package?.description ?? "") }}
+          </div>
+
+          <div class="item-test" *ngIf="package?.packageTests?.length">
+            {{ "Tests" | translate }}
+          </div>
+          <div>
+            <div class="row" *ngIf="package?.packageTests?.length">
+              <div
+                class="col-md-6 col-sm-12 col-lg-12 col-xl-6 col-12"
+                *ngFor="let test of package?.packageTests; let i = index"
+              >
+                <div class="test">
+                  <p class="circle-primary">{{ i + 1 }}</p>
+                  <p class="test-title">
+                    {{
+                      baseService.currentLanguage == "ar"
+                        ? test?.nameAr
+                        : test?.nameEn
+                    }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-test" *ngIf="package?.packageTests?.length">
+            {{ "Consultants" | translate }}
+          </div>
+          <div>
+            <div class="row" *ngIf="package?.packageTests?.length">
+              <div
+                class="col-md-6 col-sm-12 col-lg-12 col-xl-6 col-12"
+                *ngFor="
+                  let consultant of package?.packageProfessionals;
+                  let i = index
+                "
+              >
+                <div class="test">
+                  <p class="circle-primary">{{ i + 1 }}</p>
+                  <p class="test-title">
+                    {{
+                      baseService.currentLanguage == "ar"
+                        ? consultant?.doctor?.nameAr ||
+                          consultant?.coach?.nameAr ||
+                          consultant?.cosmeticSpecialist?.nameAr ||
+                          consultant?.nutritionist?.nameAr ||
+                          consultant?.physioTherapist?.nameAr
+                        : consultant?.doctor?.nameEn ||
+                          consultant?.coach?.nameEn ||
+                          consultant?.cosmeticSpecialist?.nameEn ||
+                          consultant?.nutritionist?.nameEn ||
+                          consultant?.physioTherapist?.nameEn
+                    }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <span class="item-price-title">{{ "Price" | translate }} :</span>
+            <span class="item-price"
+              >{{ package?.price }} {{ "SAR" | translate }}</span
+            >
+          </div>
+          <div class="d-flex">
+            <a
+              role="button"
+              [routerLink]="[
+                '/',
+                baseService.currentLanguage,'package',
+                package?.id,
+                'checkout'
+              ]"
+              class="btn WMbtn-primary item-button text-decoration-none"
+              >{{ "Order Now" | translate }}</a
+            >
+          </div>
+        </div>
+        <div
+          class="col-md-12 col-12 col-sm-12 col-lg-6 col-xl-6 order-1 order-md-2 package-image"
+        >
+          <img
+            [src]="imageUrl + package?.image"
+            alt="Description of Image"
+            class="w-100 h-100"
+          />
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

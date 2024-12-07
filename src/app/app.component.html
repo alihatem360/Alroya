@@ -1,0 +1,53 @@
+<div #progress id="progress">
+  <span #progressValue id="progress-value">
+    <i
+      class="fa-solid fa-arrow-up"
+      aria-hidden="true"
+      style="color: #2c143d"
+    ></i>
+  </span>
+</div>
+
+<mat-sidenav-container class="sidenav-cart-container">
+  <mat-sidenav
+    #sidenav
+    [fixedInViewport]="true"
+    mode="over"
+    [(opened)]="isCartOpened"
+    position="end"
+  >
+  </mat-sidenav>
+  <app-header
+    [currentLanguage]="currentLanguage"
+    [wishlistCount]="wishlistCount"
+    *ngIf="showHeaderFooter"
+  ></app-header>
+
+  <div class="content-wrapper" [ngClass]="{ 'show-header': showHeaderFooter }">
+    <router-outlet />
+  </div>
+  <app-footer *ngIf="showHeaderFooter"></app-footer>
+</mat-sidenav-container>
+<a
+  aria-label="Chat Now"
+  [href]="'https://wa.me/' + companyInfo?.contactPhone"
+  style="
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    background-color: #25d366;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+  target="_blank"
+>
+  <i class="fa-brands fa-whatsapp fs-1" aria-hidden="true"></i>
+</a>

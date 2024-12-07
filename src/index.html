@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="WellnessMap is a highly integrated system that aims to transform your daily lifestyle through personalized diet and exercise plans based on genetic tests."
+    />
+    <meta
+      name="keywords"
+      content="wellness, diet, exercise, genetic tests, personalized plans, lifestyle"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Alternate language links -->
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://wellnessinnovation.sa/en"
+    />
+    <link
+      rel="alternate"
+      hreflang="ar"
+      href="https://wellnessinnovation.sa/ar"
+    />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://wellnessinnovation.sa/en" />
+
+    <!-- Base Href for Angular -->
+    <base href="/" />
+
+    <!-- Google Fonts (preconnected and preloaded) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@100;300;400;500;700;900&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS (Dynamic based on language) -->
+    <script>
+      const isArabic = window.location.href.includes("/ar/");
+      document.write(
+        `<link id="bootstrap-css" href="assets/css/bootstrap.${
+          isArabic ? "rtl.min" : "min"
+        }.css" rel="stylesheet" />`
+      );
+    </script>
+
+    <!-- Moyasar CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.moyasar.com/mpf/1.14.0/moyasar.css"
+    />
+    <meta property="og:site_name" content="ويلنس ماب" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="WellnessMap" />
+    <meta
+      property="og:description"
+      content="WellnessMap provides personalized diet and exercise plans based on genetic testing to enhance your daily lifestyle."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wellnessinnovation.sa/en" />
+    <meta
+      property="og:image"
+      content="wellnessinnovation.sa/assets/images/logo.svg"
+    />
+
+    <!-- Structured Data with JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "WellnessMap",
+        "alternateName": "ويلنس ماب",
+        "url": "https://wellnessinnovation.sa",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://wellnessinnovation.sa/{lang}/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Language and Direction Settings -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isArabic = window.location.href.includes("/ar/");
+        document.documentElement.lang = isArabic ? "ar" : "en";
+        document.documentElement.dir = isArabic ? "rtl" : "ltr";
+        document.body.style.direction = isArabic ? "rtl" : "ltr";
+      });
+    </script>
+
+    <!-- Moyasar JS (deferred) -->
+    <script src="https://cdn.moyasar.com/mpf/1.14.0/moyasar.js" defer></script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

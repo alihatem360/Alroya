@@ -1,0 +1,61 @@
+<div class="container p-2 location">
+  <div class="d-flex align-items-center justify-content-between">
+    <h5 class="address py-2">{{ 'Set your Location' | translate }}</h5>
+    <button
+      class="btn p-0" 
+      (click)="closeDialog()"
+      aria-label="Close dialog" 
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="12" fill="#E2E6E9" />
+        <path
+          d="M13.0609 12.0005L15.7122 9.34855C15.7838 9.27936 15.8409 9.1966 15.8803 9.1051C15.9196 9.0136 15.9402 8.91518 15.9411 8.8156C15.942 8.71601 15.923 8.61725 15.8853 8.52508C15.8476 8.43291 15.7919 8.34917 15.7215 8.27875C15.6511 8.20833 15.5673 8.15264 15.4751 8.11493C15.383 8.07722 15.2842 8.05824 15.1846 8.05911C15.085 8.05998 14.9866 8.08067 14.8951 8.11997C14.8036 8.15928 14.7209 8.21642 14.6517 8.28805L11.9997 10.9393L9.34843 8.28805C9.27924 8.21642 9.19648 8.15928 9.10498 8.11997C9.01348 8.08067 8.91506 8.05998 8.81548 8.05911C8.71589 8.05824 8.61713 8.07722 8.52496 8.11493C8.43279 8.15264 8.34905 8.20833 8.27863 8.27875C8.20821 8.34917 8.15252 8.43291 8.11481 8.52508C8.0771 8.61725 8.05812 8.71601 8.05899 8.8156C8.05985 8.91518 8.08054 9.0136 8.11985 9.1051C8.15916 9.1966 8.21629 9.27936 8.28793 9.34855L10.9392 11.9998L8.28793 14.6518C8.21629 14.721 8.15916 14.8037 8.11985 14.8952C8.08054 14.9867 8.05985 15.0852 8.05899 15.1847C8.05812 15.2843 8.0771 15.3831 8.11481 15.4753C8.15252 15.5674 8.20821 15.6512 8.27863 15.7216C8.34905 15.792 8.43279 15.8477 8.52496 15.8854C8.61713 15.9231 8.71589 15.9421 8.81548 15.9412C8.91506 15.9404 9.01348 15.9197 9.10498 15.8804C9.19648 15.8411 9.27924 15.7839 9.34843 15.7123L11.9997 13.061L14.6517 15.7123C14.7209 15.7839 14.8036 15.8411 14.8951 15.8804C14.9866 15.9197 15.085 15.9404 15.1846 15.9412C15.2842 15.9421 15.383 15.9231 15.4751 15.8854C15.5673 15.8477 15.6511 15.792 15.7215 15.7216C15.7919 15.6512 15.8476 15.5674 15.8853 15.4753C15.923 15.3831 15.942 15.2843 15.9411 15.1847C15.9402 15.0852 15.9196 14.9867 15.8803 14.8952C15.8409 14.8037 15.7838 14.721 15.7122 14.6518L13.0609 12.0005Z"
+          fill="#2C143D" />
+      </svg>
+    </button>
+  </div>
+  <img src="../../../../assets/images/img/Rectangle 41.svg" class="w-100 h-100">
+
+  <!-- <div class="map-container" style="position: relative;">
+    <input id="pac-input" type="text" placeholder="{{'Search for places' | translate}}" class="form-control" />
+    <div id="map"></div>
+    <button
+      class="current-location-btn"
+      (click)="goToCurrentLocation()"
+      matTooltip="{{'Go to current location' | translate}}" 
+      aria-label="Go to current location"
+      style="background-color: #fff; border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); padding: 10px;"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>     </button>
+  </div> -->
+  
+
+  <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="form-group">
+      <label for="name">{{ 'Address Name' | translate }}:</label>
+      <input id="name" formControlName="name" class="form-control"/>
+      <div *ngIf="addressForm.get('name')?.invalid && (addressForm.get('name')?.dirty || addressForm.get('name')?.touched)" class="text-danger mt-2">
+        {{ 'Address name is required' | translate }}
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between mt-4">
+      <button mat-dialog-close class="btn WMbtn-Secondary01" style="padding: 12px 24px; border-radius: 8px;">
+        {{ 'Back' | translate }}
+      </button>
+
+      @if(isSubmitting){
+        <button
+          class="btn WMbtn-primary cart-button"
+          disabled="true">
+          <i class="fa-solid fa-spinner fa-spin"></i>
+        </button>
+        } @else{
+          <button [disabled]="addressForm.invalid" type="submit" class="btn WMbtn-primary" style="padding: 12px 24px; border-radius: 8px;">
+            {{ 'Submit' | translate }}
+          </button>
+        }
+
+    </div>
+  </form>
+</div>

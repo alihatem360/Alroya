@@ -1,0 +1,33 @@
+<div class="section-title">
+  {{ "About Us" | translate }}
+</div>
+<div class="row about-content justify-content-between">
+  <div class="col-md-6 col-12 paragraph-about order-2 order-md-1">
+    <div class="paragraph-text c-fs-10">
+      {{ BaseService.splitTextByLanguage(companyInfo?.aboutUs || "") }}
+    </div>
+    <a
+      class="paragraph-button"
+      [routerLink]="['/', BaseService.currentLanguage, 'about-us']"
+    >
+      <span class="paragraph-button-text">{{ "Learn More" | translate }}</span>
+      <svg
+        width="11"
+        height="11"
+        viewBox="0 0 11 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.25 0C10.6562 0 11 0.34375 11 0.75L11 8.25C11 8.6875 10.6562 9 10.25 9C9.8125 9 9.5 8.6875 9.5 8.25L9.5 2.5625L2.28125 9.78125C1.96875 10.0938 1.5 10.0938 1.21875 9.78125C0.90625 9.5 0.90625 9.03125 1.21875 8.75L8.4375 1.53125L2.75 1.53125C2.3125 1.53125 2 1.1875 2 0.78125C2 0.34375 2.3125 0.03125 2.75 0.03125L10.25 0.03125L10.25 0Z"
+          fill="#663190"
+        />
+      </svg>
+    </a>
+  </div>
+  <div class="col-md-5 col-12 order-1 order-md-2">
+    <div class="about-image">
+      <img src="/assets/images/about.png" alt="about us" class="w-100 h-100" />
+    </div>
+  </div>
+</div>

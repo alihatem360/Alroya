@@ -1,0 +1,87 @@
+.test-card {
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-circle-cart {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  background-color: #663190;
+  font-family: "Font Awesome 6 Pro";
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.btn-circle-heart {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #ebdff4;
+  font-family: "Font Awesome 6 Pro";
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: #663190;
+}
+
+.desc {
+  overflow-wrap: break-word; /* Allow long words to break onto the next line */
+  word-wrap: break-word; /* Older browsers support */
+  white-space: normal; /* Allow normal wrapping */
+  font-family: "Cairo", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #a5a5a5;
+}
+
+.price {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #663190;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 28px; /* "Hug" usually refers to auto, using a fixed height here */
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.btn-nav {
+  border: none; /* Remove border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px; /* Add space between buttons */
+  transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.navigation-buttons {
+  bottom: -75px; /* Distance from bottom */
+  z-index: 10; /* Ensure buttons are on top */
+  justify-content: center; /* Center buttons */
+}
+
+.navigation-buttons .btn-nav {
+  border: none;
+}
+
+.tests-list {
+  overflow: hidden; /* Hide scrollbars */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.Coaches-list {
+  overflow: hidden; /* Hide scrollbars */
+  white-space: nowrap; /* Prevent wrapping */
+} /*# sourceMappingURL=test.component.css.map */

@@ -1,0 +1,133 @@
+<div class="bg-landing">
+    <div class="container">
+        <div class="breadcrumb">
+            <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+          </div>  
+    </div>
+    <div class="section-landing">
+        <div class="section-heeder">
+          <div class="section-heeder-title">
+           <p>
+            {{ "Terms & Conditions" | translate }}
+           </p>
+          </div>
+          </div>
+          <div class="container">
+            <div class="section">
+                
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('These Terms & Conditions govern your use of the WellnesMap website, mobile applications, and related services (collectively, the "Services"). By accessing or using the Services, you agree to be bound by ~  تحكم هذه الشروط والأحكام استخدامك لموقع WellnesMap الإلكتروني وتطبيقات الهاتف المحمول والخدمات ذات الصلة (يشار إليها مجتمعة باسم "الخدمات"). من خلال الوصول إلى الخدمات أو استخدامها، فإنك توافق على الالتزام بـ' || '') }}
+
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section ">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Account Creation ~إنشاء حساب' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('To use certain features of the Services, you may need to create an account. You are responsible for maintaining the confidentiality of your account credentials and for any activity that occurs under your account. ~ لاستخدام بعض ميزات الخدمات، قد تحتاج إلى إنشاء حساب. أنت مسؤول عن الحفاظ على سرية بيانات اعتماد حسابك وعن أي نشاط يحدث تحت حسابك.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('User Conduct ~سلوك المستخدم' || '') }}
+                    </p>
+
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('You agree to use the Services in compliance with all applicable laws and regulations. You will not: ~أنت توافق على استخدام الخدمات وفقًا لجميع القوانين واللوائح المعمول بها. لن تقوم بما يلي:' || '') }}
+                    </p>
+ <ul class="terms-list">
+        <li> {{ baseService.splitTextByLanguage('Use the Services for any unlawful or harmful purpose ~استخدام الخدمات لأي غرض غير قانوني أو ضار ' || '') }}</li>
+        <li> {{ baseService.splitTextByLanguage('Impersonate any person or entity ~انتحال شخصية أي شخص أو كيان ' || '') }}</li>
+        <li> {{ baseService.splitTextByLanguage('Interfere with the operation of the Services or attempt to gain unauthorized access to them ~التدخل في تشغيل الخدمات أو محاولة الوصول إليها بشكل غير مصرح به ' || '') }}</li>
+        <li> {{ baseService.splitTextByLanguage('Collect or harvest personal information about other users ~ جمع أو حصاد المعلومات الشخصية عن المستخدمين الآخرين' || '') }}</li>
+    </ul>
+                </div>
+    
+            </div>
+            <div class="section ">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Booking Appointments ~حجز المواعيد' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('to the terms and conditions of the healthcare provider or medical facility you are booking with. You may be subject to additional fees or cancellation policies.~وفقًا لشروط وأحكام مقدم الرعاية الصحية أو المرفق الطبي الذي تحجز معه. قد تخضع لرسوم إضافية أو سياسات إلغاء.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Payments ~المدفوعات' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('We may use third-party payment processors to handle your payments. You agree to abide by their terms and conditions.~يجوز لنا استخدام معالجات دفع تابعة لجهات خارجية للتعامل مع مدفوعاتك. وتوافق على الالتزام بشروطها وأحكامها.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Intellectual Property ~الملكية الفكرية' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('All content on the Services, including but not limited to text, graphics, logos, and software, is the property of WellnesMap or its licensors. You may not use this content without our prior written permission.~جميع المحتويات الموجودة في الخدمات، بما في ذلك على سبيل المثال لا الحصر النصوص والرسومات والشعارات والبرامج، هي ملك لشركة WellnesMap أو مرخصيها. لا يجوز لك استخدام هذا المحتوى دون الحصول على إذن كتابي مسبق منا.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Disclaimer of Warranties ~إخلاء المسؤولية عن الضمانات' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('The Services are provided on an "as is" basis. We make no warranties or representations about the accuracy, completeness, or reliability of the content on the Services.~يتم تقديم الخدمات "كما هي". ولا نقدم أي ضمانات أو تعهدات بشأن دقة أو اكتمال أو موثوقية المحتوى الموجود في الخدمات.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+            <div class="section ">
+                <div class="section-Title">
+                    <p> 
+                    {{ baseService.splitTextByLanguage('Limitation of Liability ~حدود المسؤولية' || '') }}
+                    </p>
+                </div>
+                <div class="section-sub-title">
+                    <p>
+                        {{ baseService.splitTextByLanguage('We shall not be liable for any damages arising from your use of or inability to use the Services, even if we have been advised of the possibility of such damages.~لن نكون مسؤولين عن أي أضرار ناجمة عن استخدامك للخدمات أو عدم قدرتك على استخدامها، حتى لو تم إخطارنا بإمكانية حدوث مثل هذه الأضرار.' || '') }}
+                    </p>
+
+                </div>
+    
+            </div>
+           </div>
+      </div>
+    </div>

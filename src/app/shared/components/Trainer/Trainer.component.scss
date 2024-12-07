@@ -1,0 +1,57 @@
+.Coach-card {
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desc {
+  overflow-wrap: break-word; /* Allow long words to break onto the next line */
+  word-wrap: break-word; /* Older browsers support */
+  white-space: normal; /* Allow normal wrapping */
+  font-family: "Cairo", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #a5a5a5;
+}
+
+//test css
+.title-tests {
+  margin-bottom: 2rem;
+}
+.title-Coaches {
+  margin-bottom: 2rem;
+}
+.btn-circle {
+  width: 30px;
+  height: 28px; /* "Hug" usually refers to auto, using a fixed height here */
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.btn-nav {
+  border: none; /* Remove border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px; /* Add space between buttons */
+  transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.navigation-buttons {
+  bottom: -30px; /* Distance from bottom */
+  z-index: 10; /* Ensure buttons are on top */
+  justify-content: center; /* Center buttons */
+}
+.navigation-buttons .btn-nav {
+  border: none;
+}
+
+.tests-list {
+  overflow: hidden; /* Hide scrollbars */
+  white-space: nowrap; /* Prevent wrapping */
+}
+.Coaches-list {
+  overflow: hidden; /* Hide scrollbars */
+  white-space: nowrap; /* Prevent wrapping */
+}

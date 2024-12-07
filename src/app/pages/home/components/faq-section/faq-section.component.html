@@ -1,0 +1,19 @@
+<div class="section-title">
+  {{ "Frequently Asked Questions" | translate }}
+</div>
+<div>
+  <div class="faq-box">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let faq of questions" class="faq-panel">
+        <mat-expansion-panel-header class="faq-header">
+          <mat-panel-title class="faq-title">
+            {{ baseService.splitTextByLanguage(faq.question) }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="faq-ans">
+          {{ baseService.splitTextByLanguage(faq.answer) }}
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

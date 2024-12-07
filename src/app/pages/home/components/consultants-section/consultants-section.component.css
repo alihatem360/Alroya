@@ -1,0 +1,57 @@
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}
+
+.Consultants-cards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
+
+.wm-card-img {
+  border-radius: 8px;
+  height: 254px;
+  width: 100%;
+}
+
+.Consultant-name {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  text-align: center;
+}
+
+.Consultant-department {
+  align-self: stretch;
+  color: var(--black-white-colors-gray-3, #a5a5a5);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+swiper-container {
+  padding-top: 16px;
+}
+
+@media (max-width: 576px) {
+  .wm-card-img {
+    height: 134px;
+  }
+}/*# sourceMappingURL=consultants-section.component.css.map */

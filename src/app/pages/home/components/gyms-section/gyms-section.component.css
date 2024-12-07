@@ -1,0 +1,234 @@
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}
+
+.gym-image-container,
+.coach-image-container {
+  border-bottom: 0.5px solid var(--black-white-colors-gray-3, #a5a5a5);
+}
+
+.gym-image,
+.coach-image {
+  width: 100%;
+  height: 152px;
+}
+
+.gym-content,
+.coach-content {
+  padding-top: 16px;
+}
+
+.gym-title,
+.coach-title {
+  color: #2c143d;
+  font-size: 16px;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gym-description,
+.coach-description {
+  color: #a5a5a5;
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gym-footer,
+.coach-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.gym-navigation,
+.coach-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--Primary-colors-Primary-01, #663190);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.gym-navigation-icon,
+.coach-navigation-icon {
+  width: 11px;
+  height: 11px;
+}
+
+.gym-card {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 0 21px 16px;
+}
+
+.coach-body {
+  border-radius: 8px;
+  border: 1px solid var(--black-white-colors-gray-3, #a5a5a5);
+  background: var(--Min-Colors-White, #fff);
+}
+
+.coach-padding {
+  padding: 0 21px 16px;
+}
+
+.gym-image-container,
+.coach-image-container {
+  border-bottom: 0.5px solid var(--black-white-colors-gray-3, #a5a5a5);
+}
+
+.gym-image,
+.coach-image {
+  -o-object-fit: fill;
+  object-fit: contain;
+}
+
+.gym-content,
+.coach-content {
+  padding-top: 16px;
+}
+
+.service-title {
+  color: #2c143d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.service-desc {
+  color: #a5a5a5;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.gym-footer,
+.coach-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.gym-navigation,
+.coach-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--Primary-colors-Primary-01, #663190);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+:host-context([dir="rtl"]) .gym-navigation-icon {
+  transform: rotate(180deg);
+}
+
+:host-context([dir="rtl"]) .coach-navigation-icon {
+  transform: rotate(180deg);
+}
+
+.gym-navigation-icon,
+.coach-navigation-icon {
+  width: 11px;
+  height: 11px;
+}
+
+.button-style {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 4px 31px;
+  border-radius: 24px;
+  border: 1px solid #a5a5a5;
+  background-color: transparent;
+}
+
+.button-style:last-child {
+  margin-inline-end: 0;
+}
+
+.active {
+  background-color: #663190;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .button-style {
+    font-size: 13px;
+    padding: 0px 25px;
+  }
+  .gym-card,
+  .coach-card {
+    padding: 0px;
+  }
+  .service-desc {
+    margin: 5px 0px !important;
+    padding: 0px !important;
+  }
+  .gym-image,
+  .coach-image {
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0;
+    -o-object-fit: contain;
+    object-fit: contain;
+    padding: 8px 30px;
+  }
+  .gym-image-container,
+  .coach-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 8px 10px;
+  }
+  .buttons {
+    padding: 16px 0px;
+  }
+  .service-title {
+    font-weight: 500 !important;
+    margin: 0px !important;
+  }
+  .gym-navigation,
+  .coach-navigation {
+    color: var(--Primary-colors-Primary-01, #663190);
+    font-family: Cairo;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .gym-footer,
+  .coach-footer {
+    margin-top: 5px;
+  }
+  .gym-content {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  .gym-content,
+  .coach-content {
+    padding-top: 10px;
+  }
+} /*# sourceMappingURL=gyms-section.component.css.map */

@@ -1,0 +1,45 @@
+.section-title {
+  align-self: stretch;
+  color: var(--black-white-colors-black, #2c143d);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  margin-bottom: 32px;
+}
+
+.tests-cards {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    color: var(--black-white-colors-black, #2c143d);
+    font-family: Cairo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5px;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: #613190;
+    margin-top: 2px;
+  }
+  .wm-swiper-slot {
+    padding-top: 16;
+    padding-bottom: 20px;
+  }
+  .mt-4-5 {
+    margin-top: 0px;
+  }
+  swiper-container {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+} /*# sourceMappingURL=test-section.component.css.map */

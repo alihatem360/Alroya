@@ -1,0 +1,300 @@
+<div class="bg-landing">
+  <div class="container">
+    <div class="breadcrumb">
+      <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+    </div>
+
+    <div class="section-landing">
+      <div class="section-header">
+        <h3 class="contact-us-title">{{ "Contact Us" | translate }}</h3>
+      </div>
+      <div *ngIf="errorMessage" class="my-4">
+        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 18.25C6.76562 18.25 3.8125 16.5625 2.19531 13.75C0.578125 10.9727 0.578125 7.5625 2.19531 4.75C3.8125 1.97266 6.76562 0.25 10 0.25C13.1992 0.25 16.1523 1.97266 17.7695 4.75C19.3867 7.5625 19.3867 10.9727 17.7695 13.75C16.1523 16.5625 13.1992 18.25 10 18.25ZM7.15234 6.40234C6.80078 6.75391 6.80078 7.28125 7.15234 7.59766L8.80469 9.25L7.15234 10.9023C6.80078 11.2539 6.80078 11.7812 7.15234 12.0977C7.46875 12.4492 7.99609 12.4492 8.3125 12.0977L9.96484 10.4453L11.6172 12.0977C11.9688 12.4492 12.4961 12.4492 12.8125 12.0977C13.1641 11.7812 13.1641 11.2539 12.8125 10.9023L11.1602 9.25L12.8125 7.59766C13.1641 7.28125 13.1641 6.75391 12.8125 6.40234C12.4961 6.08594 11.9688 6.08594 11.6172 6.40234L9.96484 8.05469L8.3125 6.40234C7.99609 6.08594 7.46875 6.08594 7.15234 6.40234Z" fill="#D64045"/>
+          </svg>
+
+        <span class="errorMessage mx-1">  {{ errorMessage }}</span>
+
+      </div>
+
+      @if(isLoading){
+        <app-loading></app-loading>
+      }@else{
+      
+
+        <div class="row justify-content-between">
+          <!-- Sign Up Form -->
+          <div class="col-md-6">
+          <div>
+            <p class="contact-us-subTitle">
+              {{
+                "Enter your details below to create your message and send it."
+                  | translate
+              }}
+            </p>
+          </div>
+          <form
+            [formGroup]="contactUsForm"
+            (keyup.enter)="onSubmit()"
+            (ngSubmit)="onSubmit()"
+          >
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="label-text" for="firstName">{{
+                    "First Name" | translate
+                  }}</label>
+                  <input
+                    type="text"
+                    required
+                    id="firstName"
+                    formControlName="firstName"
+                    class="form-control"
+                    placeholder="{{ 'Enter your first name' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactUsForm.get('firstName')?.invalid &&
+                        contactUsForm.get('firstName')?.touched
+                    }"
+                  />
+                  <div
+                    class="mt-1"
+                    *ngIf="
+                      contactUsForm.get('firstName')?.invalid &&
+                      contactUsForm.get('firstName')?.touched
+                    "
+                  >
+                    <svg
+                      width="20"
+                      height="17"
+                      viewBox="0 0 20 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                        fill="#D64045"
+                      />
+                    </svg>
+                    <span class="text-danger-error mx-2">
+                      {{
+                        "The first name must be at least three letters long."
+                          | translate
+                      }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="label-text" for="lastName">{{
+                    "Last Name" | translate
+                  }}</label>
+                  <input
+                    required
+                    type="text"
+                    id="lastName"
+                    formControlName="lastName"
+                    class="form-control"
+                    placeholder="{{ 'Enter your last name' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactUsForm.get('lastName')?.invalid &&
+                        contactUsForm.get('lastName')?.touched
+                    }"
+                  />
+                  <div
+                    class="mt-1"
+                    *ngIf="
+                      contactUsForm.get('lastName')?.invalid &&
+                      contactUsForm.get('lastName')?.touched
+                    "
+                  >
+                    <svg
+                      width="20"
+                      height="17"
+                      viewBox="0 0 20 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                        fill="#D64045"
+                      />
+                    </svg>
+                    <span class="text-danger-error mx-2">
+                      {{
+                        "Last Name must be at least three letters long."
+                          | translate
+                      }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="label-text" for="email">{{
+                    "Email" | translate
+                  }}</label>
+                  <input
+                    type="text"
+                    id="email"
+                    formControlName="email"
+                    class="form-control"
+                    placeholder="{{ 'Enter your email' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactUsForm.get('email')?.invalid &&
+                        contactUsForm.get('email')?.touched
+                    }"
+                  />
+                  <div
+                    class="mt-1"
+                    *ngIf="
+                      contactUsForm.get('email')?.invalid &&
+                      contactUsForm.get('email')?.touched
+                    "
+                  >
+                    <svg
+                      width="20"
+                      height="17"
+                      viewBox="0 0 20 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                        fill="#D64045"
+                      />
+                    </svg>
+                    <span class="text-danger-error mx-2">
+                      {{
+                        "Email is required and must be in a valid format."
+                          | translate
+                      }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="label-text" for="phone">{{
+                    "Phone Number" | translate
+                  }}</label>
+
+
+                  <ngx-intl-tel-input formControlName="phone"  [cssClass]="'tel-input-custom-signUp'"
+                  [preferredCountries]="['sa',
+                  'eg',
+                  'ae',
+                  'bh',
+                  'kw',
+                  'om',
+                  'qa',
+                  'jo',
+                  'lb',
+                  'sy',
+                  'iq']" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                  [selectFirstCountry]="true" [phoneValidation]="true"
+                  [ngClass]="{
+                    'border-danger': contactUsForm.get('phone')?.invalid && contactUsForm.get('phone')?.touched,
+                  }"
+                  ></ngx-intl-tel-input>
+                  <div
+                    class="mt-1"
+                    *ngIf="
+                      contactUsForm.get('phone')?.invalid &&
+                      contactUsForm.get('phone')?.touched
+                    "
+                  >
+                    <svg
+                      width="20"
+                      height="17"
+                      viewBox="0 0 20 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                        fill="#D64045"
+                      />
+                    </svg>
+                    <span class="text-danger-error mx-2">
+                      {{ "Phone Number is required" | translate }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label class="label-text" for="description">{{
+                  "Message" | translate
+                }}</label>
+                <textarea
+                  id="description"
+                  rows="8"
+                  formControlName="description"
+                  class="form-control"
+                  placeholder="{{ 'Enter your message' | translate }}"
+                  [ngClass]="{
+                    'border-danger':
+                      contactUsForm.get('description')?.invalid &&
+                      contactUsForm.get('description')?.touched
+                  }"
+                ></textarea>
+                <div
+                  class="mt-1"
+                  *ngIf="
+                    contactUsForm.get('description')?.invalid &&
+                    contactUsForm.get('description')?.touched
+                  "
+                >
+                  <svg
+                    width="20"
+                    height="17"
+                    viewBox="0 0 20 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 0.375C10.4922 0.375 10.9492 0.65625 11.1953 1.07812L18.7891 14.0156C19.0352 14.4727 19.0352 15 18.7891 15.4219C18.543 15.8789 18.0859 16.125 17.5938 16.125H2.40625C1.87891 16.125 1.42188 15.8789 1.17578 15.4219C0.929688 15 0.929688 14.4727 1.17578 14.0156L8.76953 1.07812C9.01562 0.65625 9.47266 0.375 10 0.375ZM10 4.875C9.50781 4.875 9.15625 5.26172 9.15625 5.71875V9.65625C9.15625 10.1484 9.50781 10.5 10 10.5C10.457 10.5 10.8438 10.1484 10.8438 9.65625V5.71875C10.8438 5.26172 10.457 4.875 10 4.875ZM11.125 12.75C11.125 12.1523 10.5977 11.625 10 11.625C9.36719 11.625 8.875 12.1523 8.875 12.75C8.875 13.3828 9.36719 13.875 10 13.875C10.5977 13.875 11.125 13.3828 11.125 12.75Z"
+                      fill="#D64045"
+                    />
+                  </svg>
+                  <span class="text-danger-error mx-2">
+                    {{ "Message is required" | translate }}</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button
+                *ngIf="!loading"
+                type="submit"
+                class="py-3 btn WMbtn-primary w-100"
+                (click)="onSubmit()"
+              >
+                {{ "Send" | translate }}
+              </button>
+              <button *ngIf="loading" class="py-2 btn WMbtn-primary w-100">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- Image Section -->
+
+        <div class="col-md-5 d-none d-md-block mt-0">
+          <img src="/assets/images/Contact-Us.png" alt="Description of Image" height="587" class="w-100">
+        </div>
+      </div>
+    }
+    </div>
+  </div>
+</div>

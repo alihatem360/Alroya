@@ -1,0 +1,209 @@
+<div class="section-title">
+  {{ "Certificated Gyms" | translate }}
+</div>
+<div class="buttons">
+  <button
+    class="button-style"
+    [ngClass]="isGymActive ? 'active' : ''"
+    (click)="initializeGymSwiper()"
+  >
+    {{ "Gyms" | translate }}
+  </button>
+  <button
+    class="button-style"
+    [ngClass]="isGymActive ? '' : 'active'"
+    (click)="initializeCoachSwiper()"
+  >
+    {{ "Coaches" | translate }}
+  </button>
+</div>
+<div class="row g-2 justify-content-between align-items-center">
+  <div class="col-12 col-lg-6">
+    @if(isGymActive){
+    <swiper-container #gymSwiper init="false">
+      @for(gym of gyms;track gym.id){
+      <swiper-slide class="wm-swiper-slot">
+        <div class="gym-card h-100">
+          <div class="gym-image-container">
+            <a [routerLink]="['/', baseService.currentLanguage, 'gym', gym.id]">
+              <img
+                class="gym-image cursor-pointer"
+                [src]="imageUrl + gym.image"
+                [alt]="gym.nameEn"
+              />
+            </a>
+          </div>
+
+          <div class="gym-content">
+            <h2 class="service-title">
+              {{
+                baseService.currentLanguage == "ar" ? gym.nameAr : gym.nameEn
+              }}
+            </h2>
+            <p class="service-desc">
+              {{ baseService.splitTextByLanguage(gym.description) }}
+            </p>
+            <div class="gym-footer">
+              <a
+                [routerLink]="['/', baseService.currentLanguage, 'gym', gym.id]"
+                class="gym-navigation cursor-pointer"
+              >
+                {{ "View plans" | translate }}
+                <svg
+                  class="gym-navigation-icon"
+                  width="11"
+                  height="11"
+                  viewBox="0 0 11 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.3125 5.92188L6.1875 9.85938C5.95312 10.0703 5.60156 10.0703 5.39062 9.83594C5.17969 9.60156 5.17969 9.25 5.41406 9.03906L8.53125 6.0625H0.5625C0.234375 6.0625 0 5.82812 0 5.5C0 5.19531 0.234375 4.9375 0.5625 4.9375H8.53125L5.41406 1.98438C5.17969 1.77344 5.17969 1.39844 5.39062 1.1875C5.60156 0.953125 5.97656 0.953125 6.1875 1.16406L10.3125 5.10156C10.4297 5.21875 10.5 5.35938 10.5 5.5C10.5 5.66406 10.4297 5.80469 10.3125 5.92188Z"
+                    fill="#2C143D"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+    <div class="d-flex justify-content-center align-items-center mt-4-5 arrow">
+      <div class="gym-button-prev swiper-custom-button">
+        <svg
+          width="11"
+          height="17"
+          viewBox="0 0 11 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.22266 7.47656C0.765625 7.89844 0.765625 8.63672 1.22266 9.05859L7.97266 15.8086C8.39453 16.2656 9.13281 16.2656 9.55469 15.8086C10.0117 15.3867 10.0117 14.6484 9.55469 14.2266L3.61328 8.25L9.55469 2.30859C10.0117 1.88672 10.0117 1.14844 9.55469 0.726562C9.13281 0.269531 8.39453 0.269531 7.97266 0.726562L1.22266 7.47656Z"
+            fill="#663190"
+          />
+        </svg>
+      </div>
+      <div class="gym-button-next swiper-custom-button">
+        <svg
+          width="11"
+          height="17"
+          viewBox="0 0 11 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.76953 7.47656C10.2266 7.89844 10.2266 8.63672 9.76953 9.05859L3.01953 15.8086C2.59766 16.2656 1.85938 16.2656 1.4375 15.8086C0.980469 15.3867 0.980469 14.6484 1.4375 14.2266L7.37891 8.25L1.4375 2.30859C0.980469 1.88672 0.980469 1.14844 1.4375 0.726562C1.85938 0.269531 2.59766 0.269531 3.01953 0.726562L9.76953 7.47656Z"
+            fill="#663190"
+          />
+        </svg>
+      </div>
+    </div>
+    } @else {
+    <swiper-container #coachSwiper init="false">
+      @for(coach of coaches;track coach.id){
+      <swiper-slide class="wm-swiper-slot">
+        <a
+          [routerLink]="[
+            '/',
+            baseService.currentLanguage,
+            'training-details',
+            coach.id
+          ]"
+          style="cursor: pointer"
+          class="coach-card h-100"
+        >
+          <div class="coach-body h-100">
+            <div class="coach-image-container">
+              <img
+                class="coach-image"
+                [src]="imageUrl + coach.image"
+                [alt]="coach.nameEn"
+              />
+            </div>
+            <div class="coach-padding">
+              <div class="coach-content">
+                <h2 class="service-title">
+                  {{
+                    baseService.currentLanguage == "ar"
+                      ? coach.nameAr
+                      : coach.nameEn
+                  }}
+                </h2>
+                <p class="service-desc">
+                  {{ baseService.splitTextByLanguage(coach.description) }}
+                </p>
+              </div>
+              <div class="coach-footer">
+                <a
+                  [routerLink]="[
+                    '/',
+                    baseService.currentLanguage,
+                    'training-details',
+                    coach.id
+                  ]"
+                  class="coach-navigation"
+                  style="cursor: pointer"
+                >
+                  {{ "Book Now" | translate }}
+                  <svg
+                    class="coach-navigation-icon"
+                    width="11"
+                    height="11"
+                    viewBox="0 0 11 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.3125 5.92188L6.1875 9.85938C5.95312 10.0703 5.60156 10.0703 5.39062 9.83594C5.17969 9.60156 5.17969 9.25 5.41406 9.03906L8.53125 6.0625H0.5625C0.234375 6.0625 0 5.82812 0 5.5C0 5.19531 0.234375 4.9375 0.5625 4.9375H8.53125L5.41406 1.98438C5.17969 1.77344 5.17969 1.39844 5.39062 1.1875C5.60156 0.953125 5.97656 0.953125 6.1875 1.16406L10.3125 5.10156C10.4297 5.21875 10.5 5.35938 10.5 5.5C10.5 5.66406 10.4297 5.80469 10.3125 5.92188Z"
+                      fill="#2C143D"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </swiper-slide>
+      }
+    </swiper-container>
+    <div class="d-flex justify-content-center align-items-center mt-4-5">
+      <div class="coach-button-prev mx-2 swiper-custom-button">
+        <svg
+          width="11"
+          height="17"
+          viewBox="0 0 11 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.22266 7.47656C0.765625 7.89844 0.765625 8.63672 1.22266 9.05859L7.97266 15.8086C8.39453 16.2656 9.13281 16.2656 9.55469 15.8086C10.0117 15.3867 10.0117 14.6484 9.55469 14.2266L3.61328 8.25L9.55469 2.30859C10.0117 1.88672 10.0117 1.14844 9.55469 0.726562C9.13281 0.269531 8.39453 0.269531 7.97266 0.726562L1.22266 7.47656Z"
+            fill="#663190"
+          />
+        </svg>
+      </div>
+      <div class="coach-button-next mx-2 swiper-custom-button">
+        <svg
+          width="11"
+          height="17"
+          viewBox="0 0 11 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.76953 7.47656C10.2266 7.89844 10.2266 8.63672 9.76953 9.05859L3.01953 15.8086C2.59766 16.2656 1.85938 16.2656 1.4375 15.8086C0.980469 15.3867 0.980469 14.6484 1.4375 14.2266L7.37891 8.25L1.4375 2.30859C0.980469 1.88672 0.980469 1.14844 1.4375 0.726562C1.85938 0.269531 2.59766 0.269531 3.01953 0.726562L9.76953 7.47656Z"
+            fill="#663190"
+          />
+        </svg>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="col-12 col-lg-5 d-none d-lg-block">
+    <img
+      class="w-100 h-100"
+      src="/assets/images/traniersAndGyms.png"
+      alt="traniersAndGyms"
+    />
+  </div>
+</div>
